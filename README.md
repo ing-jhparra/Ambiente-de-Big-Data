@@ -43,8 +43,6 @@
 </li>
 </ul>
 
-
-
 <P>
 En resumen, la implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología a la gerencia de infraestructura. Esta iniciativa puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.</P>
 
@@ -65,15 +63,13 @@ En resumen, la implementación de un MVP de Big Data utilizando Docker es una ex
 
 <b>Paso 0 Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
 
-Proyecto-Integrador-Big-Data# sudo docker network ls
+usuario@equipo$ sudo docker network ls
 
 <p>Se mostrara una lista de interfaces, tome nota de la interface relacionada</p>
 
 <p align="center">
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
 </p>
-
-</pre>
 
 <p>Ahora hagamos una inspeccion para encontrar la IP en la que se publican las intefaces de hadoop</p>
 
@@ -96,25 +92,69 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 
 <p><b>Paso 1</b>. Para implementar el entorno ejecute los siguientes comando</p>
-```
-  git clone https://github.com/lopezdar222/herramientas_big_data
-  cd herramientas_big_data
-  sudo docker-compose -f docker-compose-vX.yml up -d
-```
 
-## 1) HDFS
 
-Se puede utilizar el entorno docker-compose-v1.yml
+<p>usuario@equipo$ git clone https://github.com/ing-jhparra/Proyecto-Integrador-Big-Data.git</p>
 
-Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "namenode"
+<p align="center">
+    <img src="./imagenes/clonando_repositorio.png" alt="Clonando Repositorio"  />
+</p>
 
-```
+<p>usuario@equipo$ cd Proyecto-Integrador-Big-Data</p>
+<p>usuario@equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v{x}.yml up -d</p> 
+<p><b>Nota</b>: x tiene un valor entre 1 y 4</p>
+
+<h2>HDFS</h2>
+
+<p><b>Paso 2</b>. En este paso ejecute el entorno docker-compose-v1.yml, dentro del directorio Proyecto-Integrador-Big-Data, luego
+                  en el nodo recien creado <b>namenode</b> se debe crear un directorio en /home llamado Datasets que tambien tendra otros subdirectorios, cuyo nombres estan relacionado a cada nombre dearchivo csv</p>
+
+<p>usuario@equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
+
+<p>root@e3f7cef0fa9d:# cd /home</p>
+
+<p>root@e3f7cef0fa9d:/home# mkdir Datasets</p>
+
+<p>root@e3f7cef0fa9d:/home/Datasets# mkdir calendario</p>
+
+<p>Y terminar de ejecutar para crear los subdirectorios : canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto, venta. Quedando de esta manera</p>
+
+<p align="center">
+    <img src="./imagenes/directorio_Dataset.png" alt="Clonando Repositorio"  />
+</p>
+	 
+
+<b>Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "namenode" ejecutando las sentencias</b></br>
+
+<p>
+docker cp ./gasto/Gasto.csv namenode:/home/Datasets/gasto</br>
+docker cp ./venta/Venta.csv namenode:/home/Datasets/venta</br>
+docker cp ./producto/Producto.csv namenode:/home/Datasets/producto</br>
+docker cp ./canaldeventa/CanalDeVenta.csv namenode:/home/Datasets/canaldeventa</br>
+docker cp ./tipodegasto/TiposDeGasto.csv namenode:/home/Datasets/tiposdegasto</br>
+docker cp ./sucursal/Sucursal.csv namenode:/home/Datasets/sucursal</br>
+docker cp ./cliente/Cliente.csv namenode:/home/Datasets/cliente</br>
+docker cp ./empleado/Empleado.csv namenode:/home/Datasets/empleado</br>
+docker cp ./proveedor/Proveedor.csv namenode:/home/Datasets/proveedor</br>
+docker cp ./compra/Compra.csv namenode:/home/Datasets/compra</br>
+docker cp ./data_nvo/Producto.csv namenode:/home/Datasets/data_nvo</br>
+docker cp ./data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo</br>
+docker cp ./data_nvo/Cliente.csv namenode:/home/Datasets/data_nvo</br>
+docker cp ./calendario/Calendario.csv namenode:/home/Datasets/calendario</br>
+docker cp ./iris.csv namenode:/home/Datasets/./iris.csv</br>
+docker cp ./personal.csv namenode:/home/Datasets/./personal.csv</br>
+docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</br>
+</p>
+
+
+
   sudo docker exec -it namenode bash
   cd home
   mkdir Datasets
   exit
   sudo docker cp <path><archivo> namenode:/home/Datasets/<archivo>
-```
+
+
 
 Ubicarse en el contenedor "namenode"
 
