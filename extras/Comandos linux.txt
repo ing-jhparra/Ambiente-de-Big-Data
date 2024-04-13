@@ -1,0 +1,194 @@
+			COMANDOS LINUX
+			--------------
+__________________
+versión de ubuntu:
+cat /etc/lsb-release
+_________________________
+Ver Configuracion de Red:
+	sudo apt install net-tools
+	ifconfig		(Permite ver la configuración de red)
+	hostname -I		(Ver la dirección IP)
+_______
+Copiar:
+	(Control) + (Shift) + c
+______
+Pegar: 
+	Click Derecho del mouse
+__________________________
+Navegar entre directorios:
+	cd directorio
+	cd direc + (tab) 	(Te autocompleta el nombre con la coincidencia dentro del directorio que consigue)
+	cd 	(te lleva al home)
+	cd .. 	(te lleva a un directorio atrás
+	cd /home/directorio/ejemplo	(Te lleva a un directorio específico navegando por la ruta directamente)
+	cd ./ejemplo	(Usa la ruta relativa del directorio, mientras se esté en la misma rama)
+	cd ../.. 	(Te lleva a la carpeta raiz)
+	cd ~ 		(te lleva a tu carpeta principal)
+________________________________________________
+Describir un archivo:
+	file archivo (Te describe el archivo "Se puede usar el tabulador para autocompletar lo del archivo")
+_________________
+Limpiar pantalla:
+	clear
+	(control) + l
+__________________________________
+listar contenido de un directorio: 
+	ls
+__________________________________________________
+listar los archivos de un directorio con detalles:
+	ls -l  ("l" viende de long) 
+	ls -lh ("h" viene de human, es decir hacerlo mas fácil de entender a un humano) 
+	ls -la ("a" muestra todos los archivos incluyendo los archivos ocultos "Se reconocen por un pundo delante '.archivo')
+	ls -lS ("S" vine de Size, ordena todos los archivos por orden de tamaño se puede combinar "-lSh" y ver el tamaño por el que se está ordenando)
+	ls -lr ("r" viene de reverse, invierte el orden en que se muestran los archivos por orden alfabético)
+____________________________________________
+Revisar los últimos mil comandos ejecutados:
+	(Cominza a escribir comando y usa las flechas del teclado)
+_________________________________
+Revisar la ruta de dónde estamos:
+	pwd	(Print Working Directory)
+__________________
+Crear directorios:
+	mkdir miDirectorio	(Escrito sin comillas crea dos directorios distintos)
+	mkdir "Mi Directorio"	(Ya admite los espacios "Es más difícil de manipular")
+	mkdir Directorio1 Directorio2 Directori3
+____________________
+Para crear archivos:
+	touch file1	
+	touch file2 file3	(Admite crear varios archivos al mismo tiempo solo separándolos por un espacio)
+________________
+copiar archivos:
+	cp file1 filePK		(Permite copiar un archivo y copiarlo en el mismo directorio con otro nombre "filePL")
+__________________________
+Revisando el comando "mv":
+	mv filePK ..		    (Permite mover un archivo al directorio anterior)
+	mv filePK file_copy	    (Permite renombrar archivos)
+	mv Directorio1 Directorio2  (Permite guardar el Directorio1 dentro del Directorio2) 
+Borrar archivos:
+	rm file_copy		(Permite borrar archivos)
+	rm -i file_copy		("i" viene de interactive, Te pregunta si estás segur@ de borrar)
+	rm -r Directorio1 	("r" viene de recursive, Permite borrar directorios)
+	rm -rf Directorio1	("f" viene de force, para forzar el borrado del directorio "Usar con cuidado".)
+	rm -ri Directorio1	(Pregunta si estás segur@ de borrar cada archivo del directorio y el directorio. "Recomendable por control")
+______________________________
+Ver el contenido de un archivo:
+	head archivo.arc 	(Permite ver las primeras 10 lineas de un archivo de texto)
+	head archivo.arc -n 17 	(-n number, sirve para elegir un número específico)
+	tail archivo.arc	(Permite ver las últimas 10 líneas)
+	tail archivo.arc -n 25	(Permite especificar el número de líneas)
+______________________________
+Interactuar dentro del archivo:
+	less archivo.arc 	(Permite ingresar al archivo e iniciar proceso de interacción)
+		/palabra	(Permite hacer búsqueda de una palabra o caractér específico dentro del texto)
+		q		(Permite salir del espacio de interacción)
+___________________________
+Abrir archivos ejecutables:
+	./archivo.extensión	(Algunos archivos ejecutable pueden necesitar o no los permisos de ejecución)
+_________________________________________
+Para abrir documentos en otros programas:
+	sudo apt install xdg	(Instalar el paquete para ello)
+	xdg-open archivo.arc	(Permite abrir el archivo en el editor de texto por defecto)
+	nautilos 		(En caso de estar trabajando desde ubuntu, te abre las carpetas dónde te encuentras)
+________________________________________________________
+Ayudas con los comandos y documentación de los comandos:
+	help comando 		(Permite una descripción de cómo usar el comando)
+	comando --help		(Es una  variante del comando anterior)
+	man comando		(Permite ver y acceder al manual del comando, presionar "q" para salir del modo lectura)
+	info comando		(Similar a las opciones anteriores)
+	whatis comando		(Descripción corta de lo que hace el comando)
+______________________________
+Crear comandos personalizados:
+	Alias l="ls -lh" 	("l" es una letra de ejemplo, pero se le asignaría a "l" la acción de "ls -lh")Nota: Se conserva durante la sesión.
+____________________________________________________________________________________________
+filtrado de archivos o directorios usando Wildcards(Solo algunos ejemplos, se hace infinito):
+	ls *.ext		("*" Hace referencia a cualquier archivo que termine en..")
+	ls ref*			(Cualquier archivo que empiece por..")
+	ls re?			("?" Se utiliza para indicar si solo falta un caracter después, devolvería 'ref')
+	ls r??			("???" Se pueden usar n cantidad de veces dependiendo del sufijo de la palabra)
+	ls [[:upper:]]*		("[[:upper:]]" Devuelve todos los  archivos hasta 2 niveles de la rama que comiencen con mayúscula)
+	ls [[:lower:]]*		("[[:lower:]]" Devuelve todos los  archivos hasta 2 niveles de la rama que comiencen con mayúscula)
+	ls -d [[:upper]]*	("-d", permite filtrar solo directorios)
+	ls [ab]*		(Devuelve los archivos que comiencen por la letra que se indique dentro de los corchetes "[]")
+_______________
+Usos de 'echo':
+	echo "Texto" 		(Muestra en la consola cualquier texto que quieras"
+________________________________________________________
+Redireccionamiento de información a un archivo de texto:
+Ejemplo con el comando ls "Funciona con cualquier ouput de la consola".
+	ls > ouput.txt 		(">" Crea el archivo sino existe, y guarda la información dentro, Ojo: Tiene un sistema de sobre escritura)
+	ls >> output.txt	(">>" Realiza lo mismo, solo que en caso que el archivo tenga un contenido, no sobre escribe la información)
+	ls error 2> errores.txt		("2>" Permite guardar el ouput si el resulatdo es un error)
+	ls (de error o no) >> ouput.txt 2>&1 	(Permite guardar el ouput de la consola sea un error o no)
+___________________________________________
+Usando CAT para crear y modificar archivos:
+	cat mitexto.txt 	("cat" te permite leer un archivo de texto)
+	cat > mitexto.txt	(">" cuando se usa con cat, te permite escribir dentro del archivo de texto)
+	cat >> mitexto.txt	(">>" Permite escribir información dentro del texto sin sobre escribe la información existente)
+	control + d 		(Se usa para volver a la terminal una vaz se haya terminado)
+__________________________________
+Usando vi para modificar archivos:
+	vi mitexto.txt		(Ingresa a interfaz interactiva. Se presiona "i" para modificar, luego "ESC" cambiar el modo, ":wq" sobreescribir, guardar y salir)
+____________________________________ 
+Cowsay (Mostrar texto con una vaca):
+	sudo apt install cowsay 
+	cowsay "texto" 		(Muestra el texto que quieras)
+__________________________________
+Lolcat (Cambia el texto de color):
+	sudo apt install lolcat 
+	echo "Quiero un poco de color" lolcat (Muestra el texto en comillas de colores)
+___________________
+Mostrar Calendario:
+	sudo apt install ncal 
+	cal			(Muestra el calendario del mes)
+	ncal			(Muestra el calendario de forma horizontal)
+	date			(Muestra la fecha actual)
+_________________________________________________________________________________________
+Pipe Operator (Para redirigir el estandar ouput de un comando al estandar input de otro):
+	cowsay "Me redirijo" | lolcat
+___________________________________________
+Operadores de control y sentencias lógicas:
+	-------------------------------------------
+	Ejecutar comandos de manera uno, luego otro
+		mkdir carpeta; ls; cal | lolcat; ls 	(";" Se usa para ordenar la ejecución de los comandos)
+	-------------------------
+	Crear procesos paralelos: 
+		ls & cal & date				("&" Se usa para separar los comandos que serán ejecutados de forma paralela en otros procesos)
+	-----------------------------
+	Ejecución de comandos condicionales:
+		mkdir nuevo_archivo && cd nuevo_archivo 	("&&" hace la función del And, y la secuencia de comandos se ejecuta solo si se ejecuta satisfactoriamente el primero)
+		cd no_existe || touch file.txt			("||" hace la función del Or, sino se ejecuta un comando se puede ejecutar el siguiente)
+_________________________
+Modificación de permisos (chmod):
+	chmod 755 midoc.txt		("755" modo octal para referirse a los permisos según el orden |Usuario|Grupo|World|, En este caso Usuario tiene permisos de lectura, escritura y ejecución, los otros 2 solo lectura y escritura)
+	chmod u-r midoc.txt			("u" se refiere directamente al usuario, "-" operación de retiro de permiso, "r" tipo de permiso, en este caso lectura) 
+	chmod u+rwx midoc.txt			("rwx" son todos los permisos, "r" lectura, "w" escritura, "x" ejecución)
+	chmod u+x,go=w	midoc.txt		("," se utiliza para separar sin espacios cuando se asignan permisos a 2 o mas tipos de usuario, "g" grupos, "o" otros, en este caso se otorgó permiso de ejecución a usuario y lectura a grupos y otros)
+_____________________________________
+Cambiar de usuario desde la terminal:
+	sudo su root				("su" Switch User, Pasa de tu usuario creado a usuario root, con todos los permisos liberados.)
+	whoami 					(Te indica que usuario eres en ese momento.)
+	chown archivoroot.txt usuario		("chown" Change owner, sirve para cambiar el propierario de un archivo.)
+______________________
+Cambiar de contraseña: 
+	passwd
+
+
+	
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+

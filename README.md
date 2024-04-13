@@ -1,24 +1,86 @@
-# Practica Integradora
+<h1><strong>Viaje hacia la analítica avanzada con Big Data: La clave del exito.</strong></h1>
+<p align="center">
+    <img src="./imagenes/bigdata.jpeg" alt="Imagen de MongoDB y Docker"  />
+</p>
 
-Durante esta practica la idea es emular un ambiente de trabajo, desde un área de innovación solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
+<h1>Introducción</h1> 
 
-Desde la gerencia de Infraestructura no están muy convencidos de utilizar esta tecnología por lo que no se asigno presupuesto alguna para esta iniciativa, de forma tal que por el momento no es posible utilizar un Vendor(Azure, AWS, Google) para implementar dicho entorno, es por esto que todo el MVP se deberá implementar utilizando Docker de forma tal que se pueda hacer una demo al sector de infraestructura mostrando las ventajas de utilizar tecnologías de Big Data.
+<h3>Aprovechando el poder del Big Data con herramientas de código abierto</h3>
 
-# Entorno Docker con Hadoop, Spark y Hive
+<p>En la era actual, donde la información es poder, las empresas que buscan mantenerse a la vanguardia necesitan herramientas que les permitan procesar y analizar grandes volúmenes de datos de manera eficiente. El Big Data ofrece una solución innovadora para extraer información valiosa de estos conjuntos de datos, lo que permite tomar decisiones más acertadas y optimizar procesos.</p>
 
-Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:
-* Spark
-* Hive
-* HBase
-* MongoDB
-* Neo4J
-* Zeppelin
-* Kafka
+<p>Sin embargo, la implementación de soluciones de Big Data puede generar dudas, especialmente en lo que respecta a los costos. En este caso, la propuesta de construir un MVP (Producto Mínimo Viable) de un entorno de Big Data utilizando Docker presenta una oportunidad única para demostrar las ventajas de esta tecnología sin necesidad de grandes inversiones.</p>
+
+<h3>A continuación, se detallan algunos de los beneficios de utilizar herramientas de Big Data:</h3>
+
+<ul>
+	<li>
+	<b>Mejora en la toma de decisiones</b>: El análisis de grandes volúmenes de datos permite identificar patrones y tendencias que de otra manera serían invisibles. Esta información puede ser utilizada para tomar decisiones estratégicas más informadas que conduzcan al éxito del negocio.
+	</li>
+	<li>
+	<b>Optimización de procesos</b>: El Big Data puede ayudar a identificar áreas de ineficiencia en los procesos operativos y desarrollar soluciones para mejorarlos. Esto puede conducir a ahorros significativos en costos y a una mayor productividad.
+	</li>
+	<li>
+	<b>Ventaja competitiva</b>: Las empresas que adoptan el Big Data se encuentran a la vanguardia de la innovación y pueden diferenciarse de sus competidores. Esto puede conducir a una mayor cuota de mercado y a un mayor crecimiento.
+	</li>
+</ul>
+
+<h3>La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:</h3>
 
 
-Es importante mencionar que el entorno completo consume muchos recursos de su equipo, motivo por el cuál, se propondrán ejercicios pero con ambientes reducidos, en función de las herramientas utilizadas.
+<ul>
+<li>
+<b>Bajo costo</b>: Docker es una plataforma de código abierto que no requiere de licencias costosas. Esto permite implementar un entorno de Big Data de manera económica.
+</li>
+<li>
+<b>Escalabilidad</b>: Docker permite escalar fácilmente el entorno de Big Data para adaptarse a las necesidades del negocio.
+</li>
+<li>
+<b>Flexibilidad</b>: Docker permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
+</li>
+<li>
+<b> Portabilidad</b>: Docker permite implementar aplicaciones de Big Data en cualquier entorno, ya sea en la nube o en un servidor local.
+</li>
+</ul>
 
-Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
+
+
+<P>
+En resumen, la implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología a la gerencia de infraestructura. Esta iniciativa puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.</P>
+
+<h2>Entorno Docker con Hadoop, Spark y Hive</h2>
+<h2>Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:</h2>
+<ul>
+<li>Spark</li>
+<li>Hive</li>
+<li>HBase</li>
+<li>MongoDB</li>
+<li>Neo4J</li>
+<li>Zeppelin</li>
+<li>Kafka</li>
+</ul>
+
+
+<p>La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos. </p>
+
+Paso 0 Preparación. Ejecute los siguientes comando en la terminal de linux :
+<pre>
+Proyecto-Integrador-Big-Data# sudo docker network ls
+
+Se mostrara una lista de interfaces, tome nota de la interface relacionada 
+<p align="center">
+    <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
+</p>
+Proyecto-Integrador-Big-Data# sudo docker network ls
+</pre>
+
+<p>Ahora hagamos una inspeccion para encontrar la IP en la que sepublican lass intefaces de hadoop</p>
+
+<p align="center">
+    <img src="./imagenes/network_inspect.png" alt="Lista de redes"  />
+</p>
+
+Ejecute `docker network inspect` en la red (por ejemplo, `proyecto-integrador-big-data_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
 ```
 Namenode: http://<IP_Anfitrion>:9870/dfshealth.html#tab-overview

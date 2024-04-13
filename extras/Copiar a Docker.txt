@@ -1,0 +1,19 @@
+docker cp ./gasto/Gasto.csv namenode:/home/Datasets/gasto
+docker cp ./venta/Venta.csv namenode:/home/Datasets/venta
+docker cp ./producto/Producto.csv namenode:/home/Datasets/producto
+docker cp ./canaldeventa/CanalDeVenta.csv namenode:/home/Datasets/canaldeventa
+docker cp ./tipodegasto/TiposDeGasto.csv namenode:/home/Datasets/tiposdegasto
+docker cp ./sucursal/Sucursal.csv namenode:/home/Datasets/sucursal
+docker cp ./cliente/Cliente.csv namenode:/home/Datasets/cliente
+docker cp ./empleado/Empleado.csv namenode:/home/Datasets/empleado
+docker cp ./proveedor/Proveedor.csv namenode:/home/Datasets/proveedor
+docker cp ./compra/Compra.csv namenode:/home/Datasets/compra
+docker cp ./data_nvo/Producto.csv namenode:/home/Datasets/data_nvo
+docker cp ./data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo
+docker cp ./data_nvo/Cliente.csv namenode:/home/Datasets/data_nvo
+docker cp ./calendario/Calendario.csv namenode:/home/Datasets/calendario
+docker cp ./iris.csv namenode:/home/Datasets/iris.csv
+docker cp ./personal.csv namenode:/home/Datasets/personal.csv
+docker cp ./raw-flight-data.csv namenode:/home/Datasets/raw-flight-data.csv
+
+

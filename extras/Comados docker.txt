@@ -1,0 +1,70 @@
+				COMANDOS DE DOCKER
+				------------------
+_____________________
+Correr un contenedor:
+	sudo docker run contenedor
+	sudo  docker run -it contenedor  ("it" indica que se desea correr de forma interactiva, "i" interactivo, "t" genera un pseudo-tty(emula una consola para interacturar con el contenedor)
+	sudo docker run -d contenedor	("d" detached, corre el contenedor de forma aislada)
+_______________________________
+ver el estado de un contenedor:
+	docker ps	(Indica los contenedores que se están corriendo, a través de su ID, IMAGE, COMMAND CREATED PORTS NAMES)
+	docker ps -a 	("a" all, muestra todos los contenedores que se han corrido en la máquina, estén activos o no)
+	docker inspect container-id ("container-id" se reemplaza por el ID del contenedor y permite inspeccionar todo lo que hay dentro y su configuración.)
+	docker inspect Container-Name (Se puede usar el nombre del contenedor que docker asigna aleatoriamente, o el que le asignes al correrlo)
+____________________________________
+Asignarle un nombre a un contenedor:
+	sudo docker run --name mi-nombre CONTAINER ("--name" todo lo que escribas luego se le asignará cómo nombre del contenedor.
+	sudo docker rename mi-nombre nuevo-nombre  ("rename" se le asigna un nuevo nombre a un contenedor)
+____________________
+Borrar contenedores:
+	sudo docker rm container-id 		("rm" Permite borrar un contenedor basado en su número de identificación)
+	sudo docker rm -f container-name 	("f" force, permite detener y borrar un contenedor de forma forzada)
+	sudo docker container prune 		("prune" borra todos los contenedores que están detenidos)
+_______________________________________________
+Correr porcesos dentro de un contenedor activo:
+	sudo docker exec comando coniner_name proceso	("exec" permite correr un comando o un proceso dentro de un contenedor activo)
+_____________________
+Exponer un contenedor:
+	sudo docker run -p 8080:80 container ("p" publish, se indica que se va a seguir una instrucción de puertos, "8080" puerto de la máquina, "80" puerto del contenedor.)
+_____________________________________________________
+Revisar los logs de un contenedor que está corriendo:
+	sudo docker logs container
+	sudo docker logs -f container 	("f" follow, permite hacer seguimiento a todos los logs de un contenedor)
+	sudo docker logs --tail 10 -f container ("tail 10", para poder solo ver los logs dentro de un contenedor)
+________________________________________
+Detener todos los contenedores:
+	sudo docker stop $(sudo docker ps -a -q)
+	
+______________________
+Trbajar con volumenes:
+	sudo docker volume ls 			(Lista todos los volumenes creados por docker)
+	sudo docker volume create nombrevol	(Creamos un volumen personalizado)
+	sudo docker volume rm nombrevol 	(Borrar volumen)
+___________________
+Version de docker:
+	docker --version
+	docker-compose --version
+________________
+Redes de docker:
+	sudo docker network ls		(lista las redes creadas)
+	sudo docker network rm netname	(borrar una red creada)
+____________________________________________________________
+Agregar usuario autorizado para no usar sudo constantemente:
+	sudo su root
+	sudo usermod -aG docker ubuntu   (añade al usuario "Ubunto, los permisos para conectarse con docker daemon")
+	<Reinicia el equipo para que los cambios funcionen>
+
+_______________________________________
+Ver los ID de las imágenes almacenadas:
+sudo docker images -q
+
+*****************************************
+Eliminar todas las imagenes
+sudo docker rmi -f $(sudo docker images -q)
+
+
+
+
+
+
+							
