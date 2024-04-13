@@ -63,24 +63,24 @@ En resumen, la implementación de un MVP de Big Data utilizando Docker es una ex
 
 <p>La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos. </p>
 
-Paso 0 Preparación. Ejecute los siguientes comando en la terminal de linux :
-<pre>
+<b>Paso 0 Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
+
 Proyecto-Integrador-Big-Data# sudo docker network ls
 
-Se mostrara una lista de interfaces, tome nota de la interface relacionada 
+<p>Se mostrara una lista de interfaces, tome nota de la interface relacionada</p>
+
 <p align="center">
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
 </p>
-Proyecto-Integrador-Big-Data# sudo docker network ls
+
 </pre>
 
-<p>Ahora hagamos una inspeccion para encontrar la IP en la que sepublican lass intefaces de hadoop</p>
+<p>Ahora hagamos una inspeccion para encontrar la IP en la que se publican las intefaces de hadoop</p>
 
 <p align="center">
     <img src="./imagenes/network_inspect.png" alt="Lista de redes"  />
 </p>
 
-Ejecute `docker network inspect` en la red (por ejemplo, `proyecto-integrador-big-data_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
 
 ```
 Namenode: http://<IP_Anfitrion>:9870/dfshealth.html#tab-overview
@@ -94,7 +94,8 @@ Zeppelin: http://<IP_Anfitrion>:8888
 Neo4j: http://<IP_Anfitrion>:7474
 ```
 
-Para implementar ejecute
+
+<p><b>Paso 1</b>. Para implementar el entorno ejecute los siguientes comando</p>
 ```
   git clone https://github.com/lopezdar222/herramientas_big_data
   cd herramientas_big_data
