@@ -61,9 +61,9 @@ En resumen, la implementación de un MVP de Big Data utilizando Docker es una ex
 
 <p>La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos. </p>
 
-<b>Paso 0 Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
+<b>Paso 0. Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
 
-usuario@equipo$ sudo docker network ls
+equipo$ sudo docker network ls
 
 <p>Se mostrara una lista de interfaces, tome nota de la interface relacionada</p>
 
@@ -71,7 +71,7 @@ usuario@equipo$ sudo docker network ls
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
 </p>
 
-<p>Ahora hagamos una inspeccion para encontrar la IP en la que se publican las intefaces de hadoop</p>
+<p>Hagamos una inspeccion para encontrar la IP en la que se publican las intefaces de hadoop</p>
 
 <p align="center">
     <img src="./imagenes/network_inspect.png" alt="Lista de redes"  />
@@ -93,15 +93,15 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 <p><b>Paso 1</b>. Para implementar el entorno ejecute los siguientes comando</p>
 
-
-<p>usuario@equipo$ git clone https://github.com/ing-jhparra/Proyecto-Integrador-Big-Data.git</p>
+<p> .: Clonamos el repositorio</p>
+<p>equipo$ git clone https://github.com/ing-jhparra/Proyecto-Integrador-Big-Data.git</p>
 
 <p align="center">
     <img src="./imagenes/clonando_repositorio.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>usuario@equipo$ cd Proyecto-Integrador-Big-Data</p>
-<p>usuario@equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v{x}.yml up -d</p> 
+<p>equipo$ cd Proyecto-Integrador-Big-Data</p>
+<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v{x}.yml up -d</p> 
 <p><b>Nota</b>: x tiene un valor entre 1 y 4</p>
 
 <h2>HDFS</h2>
@@ -109,7 +109,7 @@ Neo4j: http://<IP_Anfitrion>:7474
 <p><b>Paso 2</b>. En este paso ejecute el entorno docker-compose-v1.yml, dentro del directorio Proyecto-Integrador-Big-Data, luego
                   en el nodo recien creado <b>namenode</b> se debe crear un directorio en /home llamado Datasets que tambien tendra otros subdirectorios, cuyo nombres estan relacionado a cada nombre dearchivo csv</p>
 
-<p>usuario@equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
+<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
 
 <p>root@e3f7cef0fa9d:# cd /home</p>
 
@@ -117,7 +117,7 @@ Neo4j: http://<IP_Anfitrion>:7474
 
 <p>root@e3f7cef0fa9d:/home/Datasets# mkdir calendario</p>
 
-<p>Y terminar de ejecutar para crear los subdirectorios : canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto, venta. Quedando de esta manera</p>
+<p>Continue ejecutando para crear los subdirectorios : canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto, venta. Quedando de esta manera</p>
 
 <p align="center">
     <img src="./imagenes/directorio_Dataset.png" alt="Clonando Repositorio"  />
