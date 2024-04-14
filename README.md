@@ -100,9 +100,13 @@ Neo4j: http://<IP_Anfitrion>:7474
     <img src="./imagenes/clonando_repositorio.png" alt="Clonando Repositorio"  />
 </p>
 
+<p> .: Cambiamos al directorio del repositorio creado</p>
+
 <p>equipo$ cd Proyecto-Integrador-Big-Data</p>
-<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v{x}.yml up -d</p> 
-<p><b>Nota</b>: x tiene un valor entre 1 y 4</p>
+
+<p> .: Ejecutamos el docker-compose-v(x).yml con x = 1. Cabe resaltar que x, tomara los valores 1,2,3,4 </p>
+
+<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v1.yml up -d</p> 
 
 <h2>HDFS</h2>
 
