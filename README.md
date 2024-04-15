@@ -249,6 +249,5 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
 https://github.com/sercasti/datalaketools
 
 <h2>Creditos</h2>
-Este repositorio ha sido desarrollado por :
 
-* [Lista de autores](AUTHORS)
+Copyright (c) 2024 [Ing. Jesús parra] parra.jesus@gmail.com
