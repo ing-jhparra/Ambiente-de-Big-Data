@@ -244,5 +244,11 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
 
 
 
+<h2>Recursos de Interes</h2>
 
 https://github.com/sercasti/datalaketools
+
+<h2>Creditos</h2>
+Este repositorio ha sido desarrollado por :
+
+* [Lista de autores](AUTHORS)
