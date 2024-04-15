@@ -168,7 +168,7 @@ docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</b
 
 <p><b>Nota</b>: Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.</p>
 
-<p>Desde un navegador web escriba la dirección http://<IP_Anfitrion>:9870 para entrar a Hadoop <p>
+<p><b>Paso 5</b>Ahora desde un navegador web escriba la dirección http://ip_servidor:9870 para entrar a Hadoop <p>
 
 <p align="center">
     <img src="./imagenes/hadoop.png" alt="Clonando Repositorio"  />
