@@ -154,10 +154,48 @@ docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</b
 
 <p><b>Paso 3</b>. Entrar al contenedor namenode</p>
 
-p>usuario@equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
+<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
 
-sudo docker exec -it namenode bash```	
+<p>sudo docker exec -it namenode bash</p>	
 
-## 8) Herramientas de orquestación de flujos de datos
+<p><b>Paso 4</b>. Creamos un directorio en HDFS llamado "/data".</p>
+
+<p>hdfs dfs -mkdir -p /data</p>
+
+<p><b>Paso 5</b>. Copiamos los archivos csv contenidos en Datasets en el directorio provistos en HDFS:</p>
+
+<p>hdfs dfs -put /home/Datasets/* /data</p>
+
+<p><b>Nota</b>: Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.</p>
+
+<p>Desde un navegador web escriba la dirección http://<IP_Anfitrion>:9870 para entrar a Hadoop <p>
+
+<p align="center">
+    <img src="./imagenes/hadoop.png" alt="Clonando Repositorio"  />
+</p>
+
+<p>Haga clic en Utilities Configuration para entrar a la configuración <p>
+
+<p align="center">
+    <img src="./imagenes/hadoop_utilities.png" alt="Clonando Repositorio"  />
+</p>
+
+<p>Busque en esa página los valores que toman el tamaño del bloque y el factor de réplica:</p>
+
+<p>dfs.blocksize</p> 
+
+<p align="center">
+    <img src="./imagenes/blocksize.png" alt="Clonando Repositorio"  />
+</p>
+
+<p>dfs.replication</p>
+
+<p align="center">
+    <img src="./imagenes/replication.png" alt="Clonando Repositorio"  />
+</p>
+
+Y puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
+
+
 
 https://github.com/sercasti/datalaketools
