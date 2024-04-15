@@ -240,7 +240,57 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
     <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
 </p>
 
+<h2>Conceptualización de términos :</h2>
 
+<p>Big Data: Conjunto de datos extremadamente grande y complejo que es difícil de procesar y analizar utilizando métodos tradicionales.</p>
+
+<p>Herramientas de código abierto: Software disponible gratuitamente para su uso, modificación y distribución.<p>
+
+<p>MVP (Producto Mínimo Viable): Versión inicial de un producto con las características básicas necesarias para satisfacer a los primeros usuarios.</p>
+
+<p>Docker: Plataforma de virtualización de software que permite ejecutar aplicaciones en contenedores aislados.</p>
+
+<p>Hadoop: Marco de software de código abierto para el almacenamiento y procesamiento distribuido de grandes conjuntos de datos.</p>
+
+<p>Spark: Motor de procesamiento de datos distribuido de código abierto para el análisis de grandes conjuntos de datos.</p>
+
+<p>Hive: Almacén de datos distribuido que permite consultar y analizar datos almacenados en HDFS.</p>
+
+<p>HBase: Base de datos NoSQL distribuida para el almacenamiento de grandes conjuntos de datos estructurados.</p>
+
+<p>MongoDB: Base de datos NoSQL de código abierto para el almacenamiento de documentos JSON.</p>
+
+<p>Neo4J: Base de datos de grafos de código abierto para el almacenamiento y análisis de relaciones entre entidades.</p>
+
+<p>Zeppelin: Notebook interactivo para el análisis de datos que admite Spark, Hive y otras herramientas.</p>
+
+<p>Kafka: Plataforma de mensajería de código abierto para el manejo de flujos de datos en tiempo real.</p>
+
+<p>HDFS (Hadoop Distributed File System): Sistema de archivos distribuido para el almacenamiento de grandes conjuntos de datos en múltiples nodos.</p>
+
+<p>Data Lake: Almacén centralizado de datos en bruto que puede almacenar cualquier tipo de dato sin necesidad de un esquema predefinido.</p>
+
+<p>Datamart: Subconjunto de un Data Lake que contiene datos estructurados y procesados para un análisis específico.</p>
+
+<p>ETL (Extract, Transform, Load): Proceso de extracción de datos de una fuente, transformación de los datos para su análisis y carga de los datos en un destino.</p>
+
+<p>Machine Learning: Rama de la inteligencia artificial que permite a los sistemas aprender de los datos sin ser programados explícitamente.</p>
+
+<p>Deep Learning: Subconjunto de Machine Learning que utiliza redes neuronales artificiales para el aprendizaje de patrones complejos en los datos.</p>
+
+<p>Inteligencia Artificial: Rama de la informática que busca crear sistemas inteligentes que puedan razonar, aprender y actuar de forma autónoma.</p>
+
+<h2>Conceptos adicionales:</h2>
+
+<p>Escalabilidad: Capacidad de un sistema para aumentar o disminuir su capacidad de procesamiento o almacenamiento para adaptarse a la demanda.</p>
+
+<p>Portabilidad: Capacidad de un sistema para ejecutarse en diferentes entornos, como en la nube o en un servidor local.</p>
+
+<p>Alta disponibilidad: Capacidad de un sistema para estar disponible de forma continua y minimizar el tiempo de inactividad.</p>
+
+<p>Seguridad: Capacidad de un sistema para proteger los datos y recursos de accesos no autorizados.</p>
+
+<p>Gobernanza de datos: Conjunto de políticas y procesos para garantizar la calidad, integridad y seguridad de los datos.</p>
 
 
 
