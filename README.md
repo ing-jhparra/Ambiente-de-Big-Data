@@ -78,17 +78,17 @@ equipo$ sudo docker network ls
 </p>
 
 
-```
-Namenode: http://<IP_Anfitrion>:9870/dfshealth.html#tab-overview
-Datanode: http://<IP_Anfitrion>:9864/
-Spark master: http://<IP_Anfitrion>:8080/
-Spark worker: http://<IP_Anfitrion>:8081/	
-HBase Master-Status: http://<IP_Anfitrion>:16010
-HBase Zookeeper_Dump: http://<IP_Anfitrion>:16010/zk.jsp
-HBase Region_Server: http://<IP_Anfitrion>:16030
-Zeppelin: http://<IP_Anfitrion>:8888
-Neo4j: http://<IP_Anfitrion>:7474
-```
+<p>
+Namenode: http://ip_servidor:9870/dfshealth.html#tab-overview</br>
+Datanode: http://ip_servidor:9864/</br>
+Spark master: http://ip_servidor:8080/</br>
+Spark worker: http://ip_servidor:8081/</br>
+HBase Master-Status: http://ip_servidor:16010</br>
+HBase Zookeeper_Dump: http://ip_servidor:16010/zk.jsp</br>
+HBase Region_Server: http://ip_servidor:16030</br>
+Zeppelin: http://ip_servidor:8888</br>
+Neo4j: http://ip_servidor:7474</br>
+<p>
 
 
 <p><b>Paso 1</b>. Para implementar el entorno ejecute los siguientes comando</p>
@@ -168,7 +168,7 @@ docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</b
 
 <p><b>Nota</b>: Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.</p>
 
-<p><b>Paso 5</b>Ahora desde un navegador web escriba la dirección http://ip_servidor:9870 para entrar a Hadoop <p>
+<p><b>Paso 5</b>. Ahora desde un navegador web escriba la dirección http://ip_servidor:9870 para entrar a Hadoop <p>
 
 <p align="center">
     <img src="./imagenes/hadoop.png" alt="Clonando Repositorio"  />
