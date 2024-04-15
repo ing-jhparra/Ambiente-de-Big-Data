@@ -226,6 +226,19 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
     <img src="./imagenes/tablas.png" alt="Clonando Repositorio"  />
 </p>
 
+<p>Verifiquemos la inserccion de datos en las tablas, podemos utilizar un simple select o en conjuncion con la funcion coun(*)<p>
+
+<p>SELECT * FROM canal_venta;</p>
+
+<p align="center">
+    <img src="./imagenes/canal_venta.png" alt="Clonando Repositorio"  />
+</p>
+
+<p>SELECT COUNT(*) FROM canal_venta;</p>
+
+<p align="center">
+    <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
+</p>
 
 
 
