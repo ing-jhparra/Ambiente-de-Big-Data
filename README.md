@@ -214,7 +214,7 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
 
 <p>hive</p>
 
-<p><b>Paso 8</b>. Escribimos<p>
+<p>Para las tablas, escribimos</p>
 
 <p>hive>use integrador;</p>
 
