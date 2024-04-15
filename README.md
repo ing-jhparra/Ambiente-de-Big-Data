@@ -226,7 +226,7 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
     <img src="./imagenes/tablas.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>Verifiquemos la inserccion de datos en las tablas, podemos utilizar un simple select o en conjuncion con la funcion coun(*)<p>
+<p>Verifiquemos la inserccion de datos en las tablas, podemos utilizar un simple select o en conjuncion con la funcion coun(*)</p>
 
 <p>SELECT * FROM canal_venta;</p>
 
