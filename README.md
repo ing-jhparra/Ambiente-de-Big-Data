@@ -108,7 +108,7 @@ Neo4j: http://ip_servidor:7474</br>
 
 <p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v1.yml up -d</p> 
 
-<h2>HDFS</h2>
+<h2>1. HDFS</h2>
 
 <p><b>Paso 2</b>. En este paso ejecute el entorno docker-compose-v1.yml, dentro del directorio Proyecto-Integrador-Big-Data, luego
                   en el nodo recien creado <b>namenode</b> se debe crear un directorio en /home llamado Datasets que tambien tendra otros subdirectorios, cuyo nombres estan relacionado a cada nombre dearchivo csv</p>
@@ -195,6 +195,40 @@ docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</b
 </p>
 
 Y puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
+
+<h2>2. HIVE</h2>
+
+<p><b>Paso 6</b>. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello debemos copiar el archivo <b>Paso02.hql</b> en <b>/home</b> del contenedor <b>hive-server</b> ejecutamos el comando para copiar</p>
+
+<p>docker cp Paso02.hql hive-server:/home/</p>
+
+<p><b>Paso 7</b>. Ingresamos al nodo</p> 
+
+<p>sudo docker exec -it hive-server bash</p>
+
+<p>luego en el contendor ejecutamos </p>
+
+<p>hive –f /home/Paso02.hql</p>
+
+<p><b>Paso 8</b>. Ingresamos a Hive para verificar tablas y los datos</p>
+
+<p>hive</p>
+
+<p><b>Paso 8</b>. Escribimos<p>
+
+<p>hive>use integrador;</p>
+
+<p>luego </p>
+
+<p>hive>show tables;</p>
+
+<p align="center">
+    <img src="./imagenes/tablas.png" alt="Clonando Repositorio"  />
+</p>
+
+
+
+
 
 
 
