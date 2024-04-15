@@ -147,6 +147,8 @@ docker cp ./calendario/Calendario.csv namenode:/home/Datasets/calendario</br>
 docker cp ./iris.csv namenode:/home/Datasets/./iris.csv</br>
 docker cp ./personal.csv namenode:/home/Datasets/./personal.csv</br>
 docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</br>
+
+</p><b>Nota</b>: Este proceso de copia de archivo se puede realizar a través de un archivo shell script</p>
 </p>
 
 
