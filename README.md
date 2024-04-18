@@ -240,6 +240,12 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
     <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
 </p>
 
+ <h2>3. Formatos de Almacenamiento<h2>
+
+ Las tablas creadas en el punto 2 a partir de archivos en formato csv, en este punto se utilizara en formato Parquet + Snappy, utilizando el script Paso03.hql para crearlas y configurarlas, aplicando el concepto de particionamiento sobre una de las tablas, Inicaimos este paso copiando el archivo al nodo hive-server
+
+ <h2>4. SQL<h2>
+
 <h2>Conceptualización de términos :</h2>
 
 <p>Big Data: Conjunto de datos extremadamente grande y complejo que es difícil de procesar y analizar utilizando métodos tradicionales.</p>
