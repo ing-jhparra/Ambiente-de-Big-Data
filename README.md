@@ -1,9 +1,15 @@
-<h1><strong>Viaje hacia la analítica avanzada con Big Data: La clave del exito.</strong></h1>
-<p align="center">
-    <img src="./imagenes/bigdata.jpeg" alt="Imagen de MongoDB y Docker"  />
-</p>
+# Viaje hacia la analítica avanzada con Big Data: La clave del éxito 
 
-<h1>Introducción</h1> 
+<div align="center">
+  <h1 align="center">
+    Herramientas Big Data
+    <br />
+    <br />
+      <img src=="./imagenes/bigdata.jpeg" alt="Herramientas Big Data">
+  </h1>
+</div>
+
+## Introducción 
 
 <h3>Aprovechando el poder del Big Data con herramientas de código abierto</h3>
 
@@ -246,7 +252,10 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
 
  <h2>4. SQL<h2>
 
-<h2>Conceptualización de términos :</h2>
+<h2>Glosario :</h2>
+
+Ciertos términos se utilizan en Open MCT con significados o convenciones consistentes. Cualquier desviación de lo siguiente es un problema y debe abordarse (ya sea actualizando este glosario o cambiando el código para reflejar el uso correcto). Otra documentación para desarrolladores, particularmente la documentación en línea, puede presumir la comprensión de estos términos.
+
 
 <p>Big Data: Conjunto de datos extremadamente grande y complejo que es difícil de procesar y analizar utilizando métodos tradicionales.</p>
 
