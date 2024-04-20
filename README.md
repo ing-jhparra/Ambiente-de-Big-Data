@@ -132,7 +132,7 @@ sudo docker-compose -f docker-compose-v1.yml up -d
 ```bash
 sudo docker exec -it namenode bash
 ```
-luego ejecutamos el siguietne comando 
+luego ejecutamos el siguiente comando 
 
 ```bash
 sudo mkdir /home/Datasets
@@ -147,78 +147,67 @@ sudo mkdir /home/Datasets/calendario
     <img src="./imagenes/directorio_Dataset.png" alt="Clonando Repositorio"  />
 </p>
 	 
-<b>Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "namenode" ejecutando las sentencias</b></br>
+**Paso 2.1**. Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor **namenode** ejecutando el siguiente comando
 
-<p>
-docker cp ./gasto/Gasto.csv namenode:/home/Datasets/gasto</br>
-docker cp ./venta/Venta.csv namenode:/home/Datasets/venta</br>
-docker cp ./producto/Producto.csv namenode:/home/Datasets/producto</br>
-docker cp ./canaldeventa/CanalDeVenta.csv namenode:/home/Datasets/canaldeventa</br>
-docker cp ./tipodegasto/TiposDeGasto.csv namenode:/home/Datasets/tiposdegasto</br>
-docker cp ./sucursal/Sucursal.csv namenode:/home/Datasets/sucursal</br>
-docker cp ./cliente/Cliente.csv namenode:/home/Datasets/cliente</br>
-docker cp ./empleado/Empleado.csv namenode:/home/Datasets/empleado</br>
-docker cp ./proveedor/Proveedor.csv namenode:/home/Datasets/proveedor</br>
-docker cp ./compra/Compra.csv namenode:/home/Datasets/compra</br>
-docker cp ./data_nvo/Producto.csv namenode:/home/Datasets/data_nvo</br>
-docker cp ./data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo</br>
-docker cp ./data_nvo/Cliente.csv namenode:/home/Datasets/data_nvo</br>
-docker cp ./calendario/Calendario.csv namenode:/home/Datasets/calendario</br>
-docker cp ./iris.csv namenode:/home/Datasets/./iris.csv</br>
-docker cp ./personal.csv namenode:/home/Datasets/./personal.csv</br>
-docker cp ./raw-flight-data.csv namenode:/home/Datasets/./raw-flight-data.csv</br>
+```bash
+sudo sh Paso00.sh
+```
 
-</p><b>Nota</b>: Este proceso de copia de archivo se puede realizar a través de un archivo shell script</p>
-</p>
+El paso anterio crea los subdirectorio y copiar los archivos en **namenode**
 
 
-<p><b>Paso 3</b>. Entrar al contenedor namenode</p>
+**Paso 2.2**. Nos conectamos a **namenode**
 
-<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
+```bash
+sudo docker exec -it namenode bash
+```
 
-<p>sudo docker exec -it namenode bash</p>	
+**Paso 2.3**. Creamos un directorio **/data** en el sistema de archivo HDFS de Hadoop de **namenode**
 
-<p><b>Paso 4</b>. Creamos un directorio en HDFS llamado "/data".</p>
+```bash
+hdfs dfs -mkdir -p /data
+```
 
-<p>hdfs dfs -mkdir -p /data</p>
+**Paso 2.4**. Copiamos los archivos csv contenidos en Datasets en el directorio provistos (/data) en HDFS:
 
-<p><b>Paso 5</b>. Copiamos los archivos csv contenidos en Datasets en el directorio provistos en HDFS:</p>
+```bash
+hdfs dfs -put /home/Datasets/* /data
+```
 
-<p>hdfs dfs -put /home/Datasets/* /data</p>
+**NOTA** : Se encuentra en desarrollo la automatización de este paso, de creacion y copia de archvios a **/data**
 
-<p><b>Nota</b>: Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.</p>
 
-<p><b>Paso 5</b>. Ahora desde un navegador web escriba la dirección http://ip_servidor:9870 para entrar a Hadoop <p>
+**Paso 2.5**. Desde un navegador web escriba la dirección **http://Colocar-IP-del-Servidor:9870** para entrar a Hadoop
 
 <p align="center">
     <img src="./imagenes/hadoop.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>Haga clic en Utilities Configuration para entrar a la configuración <p>
+**Paso 2.6**. Hacer clic en **Utilities - Configuration** para entrar a la configuración <p>
 
 <p align="center">
     <img src="./imagenes/hadoop_utilities.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>Busque en esa página los valores que toman el tamaño del bloque y el factor de réplica:</p>
+**Paso 2.7**. Busque los valores del bloque y el factor de réplica:</p>
 
-<p>dfs.blocksize</p> 
+**dfs.blocksize** 
 
 <p align="center">
     <img src="./imagenes/blocksize.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>dfs.replication</p>
+**dfs.replication**
 
 <p align="center">
     <img src="./imagenes/replication.png" alt="Clonando Repositorio"  />
 </p>
 
-Y puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
+Puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
 
-<h2>2. HIVE</h2>
+## HIVE
 
-<p><b>Paso 6</b>. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello debemos copiar el archivo <b>Paso02.hql</b> en <b>/home</b> del contenedor <b>hive-server</b> ejecutamos el comando para copiar</p>
+**Paso 3**. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello debemos copiar el archivo <b>Paso02.hql</b> en <b>/home</b> del contenedor <b>hive-server</b> ejecutamos el comando para copiar</p>
 
 <p>docker cp Paso02.hql hive-server:/home/</p>
 
