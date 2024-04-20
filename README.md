@@ -7,6 +7,12 @@ div align="center">
   </h1>
 </div>
 
+<p align="left">
+   <br />
+   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+   <br />
+</p>
+
 ## Introducción
 
 En la era de la información, las empresas necesitan herramientas para procesar y analizar grandes volúmenes de datos. El Big Data ofrece una solución para extraer información valiosa de estos conjuntos de datos, lo que permite tomar mejores decisiones y optimizar procesos.
@@ -17,8 +23,6 @@ Beneficios de usar herramientas de Big Data:
 - **Ventaja competitiva**: Diferencia a las empresas de sus competidores.
 
 La implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología y puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.
-
-
 
 ## La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:
 
