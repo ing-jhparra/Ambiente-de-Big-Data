@@ -21,7 +21,7 @@
 
 * [HDFS](#HDFS)
 
-* [HIDE](#HIDE)
+* [HIVE](#HIVE)
 
 * [Glosario](#Glosario)
 
