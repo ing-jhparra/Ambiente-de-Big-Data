@@ -61,17 +61,24 @@ La implementación completa de este proyecto requiere de un entorno con recursos
 
 ## Implementación
 
-<b>Paso 0. Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
+verificar la interface de Red de docker. Ejecute el siguientes comando en la terminal de linux :
 
-equipo$ sudo docker network ls
+```bash
+sudo docker network ls
+```
 
-<p>Se mostrara una lista de interfaces, tome nota de la interface relacionada</p>
+Se debe mostrar una lista de red, incluyendo la del proyecto, sino es porque aun no se ha mostrado
 
 <p align="center">
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
 </p>
 
-<p>Hagamos una inspeccion para encontrar la IP en la que se publican las intefaces de hadoop</p>
+Inspeccionemos para encontrar la IP en la que se publican las intefaces de hadoop</p>
+
+```bash
+sudo docker network inspect proyecto-integrador-big-data_default
+```
+Y observe
 
 <p align="center">
     <img src="./imagenes/network_inspect.png" alt="Lista de redes"  />
