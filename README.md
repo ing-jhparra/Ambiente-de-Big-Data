@@ -7,11 +7,22 @@
   </h1>
 </div>
 
-<p align="left">
+<p align="center">
    <br />
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
    <br />
 </p>
+
+## Indice
+
+*[Introducción](#Introducción)
+
+*[Entorno Docker con Hadoop, Spark y Hive](#Entorno Docker con Hadoop, Spark y Hive)
+
+*[Índice](#índice)
+
+*[Descripción del proyecto](#descripción-del-proyecto)
+
 
 ## Introducción
 
@@ -26,29 +37,28 @@ La implementación de un MVP de Big Data utilizando Docker es una excelente mane
 
 ## La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:
 
-
 - **Bajo costo**: Docker es una plataforma de código abierto que no requiere de licencias costosas. Esto permite implementar un entorno de Big Data de manera económica.
 - **Escalabilidad**: Docker permite escalar fácilmente el entorno de Big Data para adaptarse a las necesidades del negocio.
 - **Flexibilidad**: Docker permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
 - **Portabilidad**: Docker permite implementar aplicaciones de Big Data en cualquier entorno, ya sea en la nube o en un servidor local.
 
-<P>
-En resumen, la implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología a la gerencia de infraestructura. Esta iniciativa puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.</P>
-
-<h2>Entorno Docker con Hadoop, Spark y Hive</h2>
-<h2>Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:</h2>
-<ul>
-<li>Spark</li>
-<li>Hive</li>
-<li>HBase</li>
-<li>MongoDB</li>
-<li>Neo4J</li>
-<li>Zeppelin</li>
-<li>Kafka</li>
-</ul>
+En resumen, la implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología a la gerencia de infraestructura. Esta iniciativa puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.
 
 
-<p>La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos. </p>
+
+## Entorno Docker con Hadoop, Spark y Hive
+## Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:
+
+- **Spark**
+- **Hive**
+- **HBase**
+- **MongoDB**
+- **Neo4J**
+- **Zeppelin**
+- **Kafka**
+
+
+La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán unos pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos.
 
 <b>Paso 0. Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
 
