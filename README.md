@@ -19,9 +19,11 @@
 
 *[Implementación](#Implementación)
 
-*[Índice](#índice)
+*[Glosario](#Glosario)
 
-*[Descripción del proyecto](#descripción-del-proyecto)
+*[Recursos](#Recursos)
+
+*[Créditos](#Créditos)
 
 
 ## Introducción
@@ -61,13 +63,13 @@ La implementación completa de este proyecto requiere de un entorno con recursos
 
 ## Implementación
 
-verificar la interface de Red de docker. Ejecute el siguientes comando en la terminal de linux :
+verificar la interface de Red de docker. Ejecute el siguiente comando en la terminal de linux :
 
 ```bash
 sudo docker network ls
 ```
 
-Se debe mostrar una lista de red, incluyendo la del proyecto, sino es porque aun no se ha mostrado
+Se debe mostrar una lista de red, incluyendo la del proyecto, sino,  es porque aun no se ha mostrado
 
 <p align="center">
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
@@ -253,67 +255,64 @@ Y puede también buscar otras configuraciones que necesite conocer del sistema H
 
  <h2>4. SQL<h2>
 
-<h2>Glosario :</h2>
+## Glosario :
 
 Ciertos términos se utilizan en Open MCT con significados o convenciones consistentes. Cualquier desviación de lo siguiente es un problema y debe abordarse (ya sea actualizando este glosario o cambiando el código para reflejar el uso correcto). Otra documentación para desarrolladores, particularmente la documentación en línea, puede presumir la comprensión de estos términos.
 
 
-<p>Big Data: Conjunto de datos extremadamente grande y complejo que es difícil de procesar y analizar utilizando métodos tradicionales.</p>
+- **Big Data**: Conjunto de datos extremadamente grande y complejo que es difícil de procesar y analizar utilizando métodos tradicionales.
 
-<p>Herramientas de código abierto: Software disponible gratuitamente para su uso, modificación y distribución.<p>
+- **Herramientas de código abierto**: Software disponible gratuitamente para su uso, modificación y distribución.
 
-<p>MVP (Producto Mínimo Viable): Versión inicial de un producto con las características básicas necesarias para satisfacer a los primeros usuarios.</p>
+- **MVP (Producto Mínimo Viable)**: Versión inicial de un producto con las características básicas necesarias para satisfacer a los primeros usuarios.
 
-<p>Docker: Plataforma de virtualización de software que permite ejecutar aplicaciones en contenedores aislados.</p>
+- **Docker**: Plataforma de virtualización de software que permite ejecutar aplicaciones en contenedores aislados.
 
-<p>Hadoop: Marco de software de código abierto para el almacenamiento y procesamiento distribuido de grandes conjuntos de datos.</p>
+- **Hadoop**: Marco de software de código abierto para el almacenamiento y procesamiento distribuido de grandes conjuntos de datos.
 
-<p>Spark: Motor de procesamiento de datos distribuido de código abierto para el análisis de grandes conjuntos de datos.</p>
+- **Spark**: Motor de procesamiento de datos distribuido de código abierto para el análisis de grandes conjuntos de datos.
 
-<p>Hive: Almacén de datos distribuido que permite consultar y analizar datos almacenados en HDFS.</p>
+- **Hive**: Almacén de datos distribuido que permite consultar y analizar datos almacenados en HDFS.
 
-<p>HBase: Base de datos NoSQL distribuida para el almacenamiento de grandes conjuntos de datos estructurados.</p>
+- **HBase**: Base de datos NoSQL distribuida para el almacenamiento de grandes conjuntos de datos estructurados.
 
-<p>MongoDB: Base de datos NoSQL de código abierto para el almacenamiento de documentos JSON.</p>
+- **MongoDB**: Base de datos NoSQL de código abierto para el almacenamiento de documentos JSON.
 
-<p>Neo4J: Base de datos de grafos de código abierto para el almacenamiento y análisis de relaciones entre entidades.</p>
+- **Neo4J**: Base de datos de grafos de código abierto para el almacenamiento y análisis de relaciones entre entidades.
 
-<p>Zeppelin: Notebook interactivo para el análisis de datos que admite Spark, Hive y otras herramientas.</p>
+- **Zeppelin**: Notebook interactivo para el análisis de datos que admite Spark, Hive y otras herramientas.
 
-<p>Kafka: Plataforma de mensajería de código abierto para el manejo de flujos de datos en tiempo real.</p>
+- **Kafka**: Plataforma de mensajería de código abierto para el manejo de flujos de datos en tiempo real.
 
-<p>HDFS (Hadoop Distributed File System): Sistema de archivos distribuido para el almacenamiento de grandes conjuntos de datos en múltiples nodos.</p>
+- **HDFS (Hadoop Distributed File System)**: Sistema de archivos distribuido para el almacenamiento de grandes conjuntos de datos en múltiples nodos.
 
-<p>Data Lake: Almacén centralizado de datos en bruto que puede almacenar cualquier tipo de dato sin necesidad de un esquema predefinido.</p>
+- **Data Lake**: Almacén centralizado de datos en bruto que puede almacenar cualquier tipo de dato sin necesidad de un esquema predefinido.
 
-<p>Datamart: Subconjunto de un Data Lake que contiene datos estructurados y procesados para un análisis específico.</p>
+- **Datamart**: Subconjunto de un Data Lake que contiene datos estructurados y procesados para un análisis específico.
 
-<p>ETL (Extract, Transform, Load): Proceso de extracción de datos de una fuente, transformación de los datos para su análisis y carga de los datos en un destino.</p>
+- **ETL (Extract, Transform, Load)**: Proceso de extracción de datos de una fuente, transformación de los datos para su análisis y carga de los datos en un destino.
 
-<p>Machine Learning: Rama de la inteligencia artificial que permite a los sistemas aprender de los datos sin ser programados explícitamente.</p>
+- **Machine Learning**: Rama de la inteligencia artificial que permite a los sistemas aprender de los datos sin ser programados explícitamente.
 
-<p>Deep Learning: Subconjunto de Machine Learning que utiliza redes neuronales artificiales para el aprendizaje de patrones complejos en los datos.</p>
+- **Deep Learning**: Subconjunto de Machine Learning que utiliza redes neuronales artificiales para el aprendizaje de patrones complejos en los datos.
 
-<p>Inteligencia Artificial: Rama de la informática que busca crear sistemas inteligentes que puedan razonar, aprender y actuar de forma autónoma.</p>
+- **Inteligencia Artificial**: Rama de la informática que busca crear sistemas inteligentes que puedan razonar, aprender y actuar de forma autónoma.
 
-<h2>Conceptos adicionales:</h2>
+- **Escalabilidad**: Capacidad de un sistema para aumentar o disminuir su capacidad de procesamiento o almacenamiento para adaptarse a la demanda.
 
-<p>Escalabilidad: Capacidad de un sistema para aumentar o disminuir su capacidad de procesamiento o almacenamiento para adaptarse a la demanda.</p>
+- **Portabilidad**: Capacidad de un sistema para ejecutarse en diferentes entornos, como en la nube o en un servidor local.
 
-<p>Portabilidad: Capacidad de un sistema para ejecutarse en diferentes entornos, como en la nube o en un servidor local.</p>
+- **Alta disponibilidad**: Capacidad de un sistema para estar disponible de forma continua y minimizar el tiempo de inactividad.
 
-<p>Alta disponibilidad: Capacidad de un sistema para estar disponible de forma continua y minimizar el tiempo de inactividad.</p>
+- **Seguridad**: Capacidad de un sistema para proteger los datos y recursos de accesos no autorizados.
 
-<p>Seguridad: Capacidad de un sistema para proteger los datos y recursos de accesos no autorizados.</p>
-
-<p>Gobernanza de datos: Conjunto de políticas y procesos para garantizar la calidad, integridad y seguridad de los datos.</p>
+- **Gobernanza de datos**: Conjunto de políticas y procesos para garantizar la calidad, integridad y seguridad de los datos.
 
 
-
-<h2>Recursos de Interes</h2>
+## Recursos
 
 https://github.com/sercasti/datalaketools
 
-<h2>Creditos</h2>
+## Créditos
 
 Copyright (c) 2024 [Ing. Jesús parra] parra.jesus@gmail.com
