@@ -1,35 +1,28 @@
-# Viaje hacia la analítica avanzada con Big Data: La clave del éxito 
-
-<div align="center">
+div align="center">
   <h1 align="center">
-    Herramientas Big Data
+    Viaje hacia la analítica avanzada con Big Data: La clave del éxito
     <br />
     <br />
       <img src=="./imagenes/bigdata.jpeg" alt="Herramientas Big Data">
   </h1>
 </div>
 
-## Introducción 
+## Introducción
 
-<h3>Aprovechando el poder del Big Data con herramientas de código abierto</h3>
+<p>
+En la era de la información, las empresas necesitan herramientas para procesar y analizar grandes volúmenes de datos. El Big Data ofrece una solución para extraer información valiosa de estos conjuntos de datos, lo que permite tomar mejores decisiones y optimizar procesos.
+Beneficios de usar herramientas de Big Data:
+- **Mejora en la toma de decisiones**: Permite identificar patrones y tendencias que de otra manera serían invisibles.
+- **Optimización de procesos**: Ayuda a identificar áreas de ineficiencia y desarrollar soluciones para mejorarlas.
+- **Ventaja competitiva**: Diferencia a las empresas de sus competidores.
+Ventajas de implementar un MVP de Big Data utilizando Docker:
+- **Bajo costo**: Docker es una plataforma de código abierto que no requiere de licencias costosas.
+- **Escalabilidad**: Permite escalar el entorno de Big Data para adaptarse a las necesidades del negocio.
+- **Flexibilidad**: Permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
+- **Portabilidad**: Permite implementar aplicaciones de Big Data en cualquier entorno.
+La implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología y puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.</p>
 
-<p>En la era actual, donde la información es poder, las empresas que buscan mantenerse a la vanguardia necesitan herramientas que les permitan procesar y analizar grandes volúmenes de datos de manera eficiente. El Big Data ofrece una solución innovadora para extraer información valiosa de estos conjuntos de datos, lo que permite tomar decisiones más acertadas y optimizar procesos.</p>
 
-<p>Sin embargo, la implementación de soluciones de Big Data puede generar dudas, especialmente en lo que respecta a los costos. En este caso, la propuesta de construir un MVP (Producto Mínimo Viable) de un entorno de Big Data utilizando Docker presenta una oportunidad única para demostrar las ventajas de esta tecnología sin necesidad de grandes inversiones.</p>
-
-<h3>A continuación, se detallan algunos de los beneficios de utilizar herramientas de Big Data:</h3>
-
-<ul>
-	<li>
-	<b>Mejora en la toma de decisiones</b>: El análisis de grandes volúmenes de datos permite identificar patrones y tendencias que de otra manera serían invisibles. Esta información puede ser utilizada para tomar decisiones estratégicas más informadas que conduzcan al éxito del negocio.
-	</li>
-	<li>
-	<b>Optimización de procesos</b>: El Big Data puede ayudar a identificar áreas de ineficiencia en los procesos operativos y desarrollar soluciones para mejorarlos. Esto puede conducir a ahorros significativos en costos y a una mayor productividad.
-	</li>
-	<li>
-	<b>Ventaja competitiva</b>: Las empresas que adoptan el Big Data se encuentran a la vanguardia de la innovación y pueden diferenciarse de sus competidores. Esto puede conducir a una mayor cuota de mercado y a un mayor crecimiento.
-	</li>
-</ul>
 
 <h3>La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:</h3>
 
