@@ -11,35 +11,22 @@ div align="center">
 
 En la era de la información, las empresas necesitan herramientas para procesar y analizar grandes volúmenes de datos. El Big Data ofrece una solución para extraer información valiosa de estos conjuntos de datos, lo que permite tomar mejores decisiones y optimizar procesos.
 Beneficios de usar herramientas de Big Data:
+
 - **Mejora en la toma de decisiones**: Permite identificar patrones y tendencias que de otra manera serían invisibles.
 - **Optimización de procesos**: Ayuda a identificar áreas de ineficiencia y desarrollar soluciones para mejorarlas.
 - **Ventaja competitiva**: Diferencia a las empresas de sus competidores.
-Ventajas de implementar un MVP de Big Data utilizando Docker:
-- **Bajo costo**: Docker es una plataforma de código abierto que no requiere de licencias costosas.
-- **Escalabilidad**: Permite escalar el entorno de Big Data para adaptarse a las necesidades del negocio.
-- **Flexibilidad**: Permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
-- **Portabilidad**: Permite implementar aplicaciones de Big Data en cualquier entorno.
+
 La implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología y puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.
 
 
 
-<h3>La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:</h3>
+## La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:
 
 
-<ul>
-<li>
-<b>Bajo costo</b>: Docker es una plataforma de código abierto que no requiere de licencias costosas. Esto permite implementar un entorno de Big Data de manera económica.
-</li>
-<li>
-<b>Escalabilidad</b>: Docker permite escalar fácilmente el entorno de Big Data para adaptarse a las necesidades del negocio.
-</li>
-<li>
-<b>Flexibilidad</b>: Docker permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
-</li>
-<li>
-<b> Portabilidad</b>: Docker permite implementar aplicaciones de Big Data en cualquier entorno, ya sea en la nube o en un servidor local.
-</li>
-</ul>
+- **Bajo costo**: Docker es una plataforma de código abierto que no requiere de licencias costosas. Esto permite implementar un entorno de Big Data de manera económica.
+- **Escalabilidad**: Docker permite escalar fácilmente el entorno de Big Data para adaptarse a las necesidades del negocio.
+- **Flexibilidad**: Docker permite desarrollar e implementar aplicaciones de Big Data de manera rápida y sencilla.
+- **Portabilidad**: Docker permite implementar aplicaciones de Big Data en cualquier entorno, ya sea en la nube o en un servidor local.
 
 <P>
 En resumen, la implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología a la gerencia de infraestructura. Esta iniciativa puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.</P>
