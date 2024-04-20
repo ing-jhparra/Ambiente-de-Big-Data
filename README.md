@@ -1,4 +1,4 @@
-div align="center">
+<div align="center">
   <h1 align="center">
     Viaje hacia la analítica avanzada con Big Data: La clave del éxito
     <br />
