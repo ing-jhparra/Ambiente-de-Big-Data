@@ -19,6 +19,10 @@
 
 *[Implementación](#Implementación)
 
+*[HDFS](#HDFS)
+
+*[HIDE](#HIDE)
+
 *[Glosario](#Glosario)
 
 *[Recursos](#Recursos)
@@ -137,11 +141,7 @@ luego ejecutamos el siguiente comando
 ```bash
 sudo mkdir /home/Datasets
 ```
-Es importante mencionar que cada archivo csv se encontrara en un subdirectorio que lleva su nombre por tanto se debe crear el directorio en question, por ejemplo, ejecutar el siguiente comando tantas veces sea necesario para canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto y venta.
-
-```bash
-sudo mkdir /home/Datasets/calendario
-```
+Es importante mencionar que cada archivo csv se encontrara en un subdirectorio que lleva su nombre por tanto se debe crear el directorio en question para calendario, canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto y venta. Al ejecutar el Paso 2.2 de este tutorial deberia obtener el resultado que se muestra en la siguiente imagen 
 
 <p align="center">
     <img src="./imagenes/directorio_Dataset.png" alt="Clonando Repositorio"  />
@@ -174,7 +174,7 @@ hdfs dfs -mkdir -p /data
 hdfs dfs -put /home/Datasets/* /data
 ```
 
-**NOTA** : Se encuentra en desarrollo la automatización de este paso, de creacion y copia de archvios a **/data**
+**NOTA** : Se encuentra en desarrollo la automatización de este paso, creacion y copia de archvios a **/data**
 
 
 **Paso 2.5**. Desde un navegador web escriba la dirección **http://Colocar-IP-del-Servidor:9870** para entrar a Hadoop
@@ -207,51 +207,86 @@ Puede también buscar otras configuraciones que necesite conocer del sistema Had
 
 ## HIVE
 
-**Paso 3**. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello debemos copiar el archivo <b>Paso02.hql</b> en <b>/home</b> del contenedor <b>hive-server</b> ejecutamos el comando para copiar</p>
+**Paso 3**. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello copiamos el archivo **Paso02.hql** en **/home** del contenedor **hive-server** ejecutando el siguiente comando 
 
-<p>docker cp Paso02.hql hive-server:/home/</p>
+```bash
+docker cp Paso02.hql hive-server:/home/
+```
 
-<p><b>Paso 7</b>. Ingresamos al nodo</p> 
+**Paso 3.1**. Ingresamos al nodo **hive-server** 
 
-<p>sudo docker exec -it hive-server bash</p>
+```bash
+sudo docker exec -it hive-server bash
+```
 
-<p>luego en el contendor ejecutamos </p>
+luego en el contendor ejecutamos
 
-<p>hive –f /home/Paso02.hql</p>
+```bash
+hive –f /home/Paso02.hql
+```
 
-<p><b>Paso 8</b>. Ingresamos a Hive para verificar tablas y los datos</p>
+**Paso 3.2**. Ingresamos a Hive para verificar tablas y los datos
 
-<p>hive</p>
+```bash
+hive
+```
 
-<p>Para las tablas, escribimos</p>
+Para las tablas, escribimos
 
-<p>hive>use integrador;</p>
+```bash
+hive>use integrador;
+```
 
-<p>luego </p>
+luego
 
-<p>hive>show tables;</p>
+```bash
+hive>show tables;
+```
 
 <p align="center">
     <img src="./imagenes/tablas.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>Verifiquemos la inserccion de datos en las tablas, podemos utilizar un simple select o en conjuncion con la funcion coun(*)</p>
+Verificamos la inserccion de datos en las tablas, podemos utilizar un select, en conjuncion de una funcion de agregación **count(*)**
 
-<p>SELECT * FROM canal_venta;</p>
+```bash
+hive>select * from canal_venta;
+```
 
 <p align="center">
     <img src="./imagenes/canal_venta.png" alt="Clonando Repositorio"  />
 </p>
 
-<p>SELECT COUNT(*) FROM canal_venta;</p>
+```bash
+hive>select count(*) from canal_venta;
+```
 
 <p align="center">
     <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
 </p>
 
- <h2>3. Formatos de Almacenamiento<h2>
+ ## Formatos de Almacenamiento
 
- Las tablas creadas en el punto 2 a partir de archivos en formato csv, en este punto se utilizara en formato Parquet + Snappy, utilizando el script Paso03.hql para crearlas y configurarlas, aplicando el concepto de particionamiento sobre una de las tablas, Inicaimos este paso copiando el archivo al nodo hive-server
+En el punto 2 fueron creadas las tablas a partir de los archivos csv, ahora crearemos unas tablas utilizando un formato **Parquet** con **Snappy** para cumplir debemos ejecutar el **Paso03.hql**, en este ejercicio utilizamso el concepto de particionamiento en la tabla venta.
+
+```bash
+hive -f Paso03.hql;
+```
+
+<p align="center">
+    <img src="./imagenes/creacion_tablas_parquet.png" alt="Clonando Repositorio"  />
+</p>
+
+luego colocamos en uso la base de datos **integrador2** y ejecutamos un select a la tabla gasto que esta particionada por la clave IdTipoGasto
+
+```bash
+select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
+```
+Por el ejercicio en la que se esta utilizando pocos datos, no se puede evidenciar el tiempo de respuesta para demostrar el rendimiento que ofrece el formato parquet con snnapy y con particionamiento
+
+<p align="center">
+    <img src="./imagenes/consulta_gasto_parquet.png" alt="Clonando Repositorio"  />
+</p>
 
  <h2>4. SQL<h2>
 
