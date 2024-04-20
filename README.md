@@ -394,9 +394,9 @@ mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_w
 ```
 **Nota**: De necesitarse descargar los driver, utilizar los siguietnes enlaces
 
-- * https://search.maven.org/search?q=g:org.mongodb.mongo-hadoop
-- * https://search.maven.org/search?q=a:mongo-hadoop-hive
-- * https://search.maven.org/search?q=a:mongo-hadoop-spark
+- https://search.maven.org/search?q=g:org.mongodb.mongo-hadoop
+- https://search.maven.org/search?q=a:mongo-hadoop-hive
+- https://search.maven.org/search?q=a:mongo-hadoop-spark
 
 **Paso 6.7**. Copiamos los archivos jar al nodo mongodb
 
