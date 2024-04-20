@@ -15,19 +15,19 @@
 
 ## Indice
 
-*[Introducción](#Introducción)
+* [Introducción](#Introducción)
 
-*[Implementación](#Implementación)
+* [Implementación](#Implementación)
 
-*[HDFS](#HDFS)
+* [HDFS](#HDFS)
 
-*[HIDE](#HIDE)
+* [HIDE](#HIDE)
 
-*[Glosario](#Glosario)
+* [Glosario](#Glosario)
 
-*[Recursos](#Recursos)
+* [Recursos](#Recursos)
 
-*[Créditos](#Créditos)
+* [Créditos](#Créditos)
 
 
 ## Introducción
@@ -267,7 +267,9 @@ hive>select count(*) from canal_venta;
 
  ## Formatos de Almacenamiento
 
-En el punto 2 fueron creadas las tablas a partir de los archivos csv, ahora crearemos unas tablas utilizando un formato **Parquet** con **Snappy** para cumplir debemos ejecutar el **Paso03.hql**, en este ejercicio utilizamso el concepto de particionamiento en la tabla venta.
+En el paso 3 fueron creadas las tablas a partir de los archivos csv, ahora crearemos unas tablas utilizando un formato **Parquet** con **Snappy** para cumplir debemos ejecutar el **Paso03.hql**, en este ejercicio utilizamso el concepto de particionamiento en la tabla venta.
+
+**Paso 4**. Ejecutamos **Paso03.hql** para crear la base de datos **integrador2** y las tablas con formatos **parquet** con **snappy** y la tabla **gasto** particionada
 
 ```bash
 hive -f Paso03.hql;
@@ -277,18 +279,151 @@ hive -f Paso03.hql;
     <img src="./imagenes/creacion_tablas_parquet.png" alt="Clonando Repositorio"  />
 </p>
 
-luego colocamos en uso la base de datos **integrador2** y ejecutamos un select a la tabla gasto que esta particionada por la clave IdTipoGasto
+luego colocamos en uso la base de datos **integrador2** y ejecutamos un select a la tabla **gasto** que esta particionada por la clave **IdTipoGasto**
 
 ```bash
 select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
 ```
-Por el ejercicio en la que se esta utilizando pocos datos, no se puede evidenciar el tiempo de respuesta para demostrar el rendimiento que ofrece el formato parquet con snnapy y con particionamiento
+**NOTA:** Por el tipo de ejercicio, se esta utilizando pocos datos, por lo cual, no se puede evidenciar el tiempo de respuesta para demostrar el rendimiento que ofrece el formato parquet con snnapy y con particionamiento
 
 <p align="center">
     <img src="./imagenes/consulta_gasto_parquet.png" alt="Clonando Repositorio"  />
 </p>
 
- <h2>4. SQL<h2>
+ ## SQL
+
+ La mejora en la velocidad de consulta que puede proporcionar un índice tiene el costo del procesamiento adicional para crear el índice y el espacio en disco para almacenar las referencias del índice. Se recomienda que los índices se basen en las ***columnas que utiliza en las condiciones de filtrado (where)***. El índice en la tabla puede degradar su rendimiento en caso de que no los esté utilizando. Creamos un índices en alguna de las tablas cargadas y probamos los resultados:
+
+ **Paso 4**. Creamos un indice y ejecutamos un select para observar el tiempo de respuesta
+
+```bash
+CREATE INDEX index_venta_producto ON TABLE venta(IdProducto) 
+AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+luego realizamos una consulta sobre venta
+
+```bash
+select IdProducto, SUM(Precio * Cantidad) FROM venta GROUP BY IdProducto; 
+```
+Y observamos el tiempo de ejecución
+
+seguido, creamos los índices correspondientes en la tabla venta y cliente:
+
+```bash
+CREATE INDEX index_venta_producto ON TABLE venta(IdProducto) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
+```
+
+## No-SQL
+
+Continuamos en el entorno ya creado
+
+### HBase
+
+**Paso 5**. Creamos una tabla en HBase, insertamos algunos valores y la consultamos
+
+**Instrucciones**:
+
+```bash
+docker exec -it hbase-master hbase shell
+```
+
+create 'personal','personal_data'
+list 'personal'
+put 'personal',1,'personal_data:name','Juan'
+put 'personal',1,'personal_data:city','Córdoba'
+put 'personal',1,'personal_data:age','25'
+put 'personal',2,'personal_data:name','Franco'
+put 'personal',2,'personal_data:city','Lima'
+put 'personal',2,'personal_data:age','32'
+put 'personal',3,'personal_data:name','Ivan'
+put 'personal',3,'personal_data:age','34'
+put 'personal',4,'personal_data:name','Eliecer'
+put 'personal',4,'personal_data:city','Caracas'
+get 'personal','4'
+
+**Paso 5.1**. En el **namenode** del cluster copiamos el archivo **personal.csv** al directroio **/data** de **HDFS**:
+
+```bash
+hdfs dfs -put personal.csv /hbase/data/personal.csv
+```
+
+### MongoDB
+
+**Instrucciones**:
+
+**Paso 6**. Copiamos los archivos iris.csv e iris.json al nodo de mongodb
+
+```bash
+sudo docker cp iris.csv mongodb:/data/iris.csv
+sudo docker cp iris.json mongodb:/data/iris.json
+```
+**Paso 6.1**. Ingresamos al nodo de mongodb
+
+```bash
+sudo docker exec -it mongodb bash
+```
+**Paso 6.2**. Importamos los archivos iris.csv e iris.json
+
+```bash
+mongoimport /data/iris.csv --type csv --headerline -d dataprueba -c iris_csv
+mongoimport --db dataprueba --collection iris_json --file /data/iris.json --jsonArray
+```
+**Paso 6.3**. Entramos al motor de consulta de MongoDB
+
+```bash
+mongosh
+```
+**Paso 6.4**. Colocamos en uso la base de datos dataprueba y mostramos las tablas
+
+```bash
+use dataprueba;
+show collections	
+```
+**Paso 6.5**. Consultmaos las dolecciones (tablas)
+
+```bash
+db.iris_csv.find()
+db.iris_json.find()	
+```
+**Paso 6.6**. Exportamos las colecciones desde MongoDB
+
+```bash
+mongoexport --db dataprueba --collection iris_csv --fields sepal_length,sepal_width,petal_length,petal_width,species --type=csv --out /data/iris_export.csv
+mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_width,petal_length,petal_width,species --type=json --out /data/iris_export.json	
+```
+**Nota**: De necesitarse descargar los driver, utilizar los siguietnes enlaces
+
+- * https://search.maven.org/search?q=g:org.mongodb.mongo-hadoop
+- * https://search.maven.org/search?q=a:mongo-hadoop-hive
+- * https://search.maven.org/search?q=a:mongo-hadoop-spark
+
+**Paso 6.7**. Copiamos los archivos jar al nodo mongodb
+
+```bash
+sudo docker cp mongo-hadoop-hive-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-hive-2.0.2.jar
+sudo docker cp mongo-hadoop-core-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-core-2.0.2.jar
+sudo docker cp mongo-hadoop-spark-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-spark-2.0.2.jar
+sudo docker cp mongo-java-driver-3.12.11.jar hive-server:/opt/hive/lib/mongo-java-driver-3.12.11.jar	
+```
+
+**Paso 6.8**. Copiamos el archivo iris.hql al nodo hive-server
+
+```bash
+sudo docker cp iris.hql hive-server:/opt/iris.hql
+sudo docker exec -it hive-server bash
+```
+**Paso 6.9**. Otorgamos permisos y ejecutamos el archivo hql
+
+```bash
+hiveserver2
+chmod 777 iris.hql
+hive -f iris.hql
+``` 	
+
+
+
+
 
 ## Glosario :
 
