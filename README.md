@@ -75,11 +75,12 @@ Se debe mostrar una lista de red, incluyendo la del proyecto, sino,  es porque a
     <img src="./imagenes/network_docker.png" alt="Lista de redes"  />
 </p>
 
-Inspeccionemos para encontrar la IP en la que se publican las intefaces de hadoop</p>
+Inspeccionemos la red para encontrar la IP en la que se publican las intefaces de hadoop</p>
 
 ```bash
 sudo docker network inspect proyecto-integrador-big-data_default
 ```
+
 Y observe
 
 <p align="center">
@@ -100,37 +101,47 @@ Neo4j: http://ip_servidor:7474</br>
 <p>
 
 
-<p><b>Paso 1</b>. Para implementar el entorno ejecute los siguientes comando</p>
+- **Paso 1**. Clonamos el repositorio para iniciar el proceso de implementación del entorno de prueba o demostración
 
-<p> .: Clonamos el repositorio</p>
-<p>equipo$ git clone https://github.com/ing-jhparra/Proyecto-Integrador-Big-Data.git</p>
+<p> .: </p>
+
+```bash
+sudo git clone https://github.com/ing-jhparra/Proyecto-Integrador-Big-Data.git
+```
 
 <p align="center">
     <img src="./imagenes/clonando_repositorio.png" alt="Clonando Repositorio"  />
 </p>
 
-<p> .: Cambiamos al directorio del repositorio creado</p>
+- **Paso 1.1**: Cambiamos al directorio del repositorio creado
 
-<p>equipo$ cd Proyecto-Integrador-Big-Data</p>
+```bash
+cd Proyecto-Integrador-Big-Data
+```
 
-<p> .: Ejecutamos el docker-compose-v(x).yml con x = 1. Cabe resaltar que x, tomara los valores 1,2,3,4 </p>
+- **Paso 1.2** Ejecutamos docker-compose-vX.yml con X = 1. Cabe resaltar que X, toma un valor dependiendo del entorno que se quiere implementar 
 
-<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker-compose -f docker-compose-v1.yml up -d</p> 
+```bash
+sudo docker-compose -f docker-compose-v1.yml up -d
+```
 
-<h2>1. HDFS</h2>
+## HDFS
 
-<p><b>Paso 2</b>. En este paso ejecute el entorno docker-compose-v1.yml, dentro del directorio Proyecto-Integrador-Big-Data, luego
-                  en el nodo recien creado <b>namenode</b> se debe crear un directorio en /home llamado Datasets que tambien tendra otros subdirectorios, cuyo nombres estan relacionado a cada nombre dearchivo csv</p>
+- **Paso 2**. Con la ejecución del paso anterior hemos implemetado un entorno HDFS, ahora ingresamos al **Namenode** para crear un directorio llamado **Datasets**  que va almacenar los archivos csv
 
-<p>equipo/Proyecto-Integrador-Big-Data:$ sudo docker exec -it namenode bash<p>
+```bash
+sudo docker exec -it namenode bash
+```
+luego ejecutamos el siguietne comando 
 
-<p>root@e3f7cef0fa9d:# cd /home</p>
+```bash
+sudo mkdir /home/Datasets
+```
+Es importante mencionar que cada archivo csv se encontrara en un subdirectorio que lleva su nombre por tanto se debe crear el directorio en question, por ejemplo, ejecutar el siguiente comando tantas veces sea necesario para canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto y venta.
 
-<p>root@e3f7cef0fa9d:/home# mkdir Datasets</p>
-
-<p>root@e3f7cef0fa9d:/home/Datasets# mkdir calendario</p>
-
-<p>Continue ejecutando para crear los subdirectorios : canaldeventa, cliente, compra, data_nvo, empleado, gasto, producto, proveedor, sucursal, tipodegasto, tiposdegasto, venta. Quedando de esta manera</p>
+```bash
+sudo mkdir /home/Datasets/calendario
+```
 
 <p align="center">
     <img src="./imagenes/directorio_Dataset.png" alt="Clonando Repositorio"  />
