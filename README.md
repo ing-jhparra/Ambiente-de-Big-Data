@@ -17,7 +17,7 @@
 
 *[Introducción](#Introducción)
 
-*[Entorno Docker con Hadoop, Spark y Hive](#Entorno Docker con Hadoop, Spark y Hive)
+*[Implementación](#Implementación)
 
 *[Índice](#índice)
 
@@ -35,7 +35,7 @@ Beneficios de usar herramientas de Big Data:
 
 La implementación de un MVP de Big Data utilizando Docker es una excelente manera de demostrar el valor de esta tecnología y puede conducir a la adopción de soluciones de Big Data en toda la empresa, lo que puede generar importantes beneficios para el negocio.
 
-## La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:
+### La implementación de un MVP de Big Data utilizando Docker ofrece las siguientes ventajas:
 
 - **Bajo costo**: Docker es una plataforma de código abierto que no requiere de licencias costosas. Esto permite implementar un entorno de Big Data de manera económica.
 - **Escalabilidad**: Docker permite escalar fácilmente el entorno de Big Data para adaptarse a las necesidades del negocio.
@@ -57,8 +57,9 @@ En resumen, la implementación de un MVP de Big Data utilizando Docker es una ex
 - **Zeppelin**
 - **Kafka**
 
-
 La implementación completa de este proyecto requiere de un entorno con recursos considerables, podemos adaptar la propuesta para ajustarla a las capacidades del equipo que servira para tal fin. Para ello, se plantearán unos pasos prácticos en entornos reducidos, cuidadosamente seleccionados en función de las herramientas utilizadas. De esta manera, podrán familiarizarse con las funcionalidades y el potencial del proyecto sin sobrecargar los recursos informáticos.
+
+## Implementación
 
 <b>Paso 0. Verificación de interface de Red</b>. Ejecute los siguientes comando en la terminal de linux :
 
