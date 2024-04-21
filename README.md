@@ -13,7 +13,7 @@
    <br />
 </p>
 
-## Indice
+## Contenido
 
 * [Introducción](#Introducción)
 
@@ -294,6 +294,41 @@ select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
 
  La mejora en la velocidad de consulta que puede proporcionar un índice tiene el costo del procesamiento adicional para crear el índice y el espacio en disco para almacenar las referencias del índice. Se recomienda que los índices se basen en las ***columnas que utiliza en las condiciones de filtrado (where)***. El índice en la tabla puede degradar su rendimiento en caso de que no los esté utilizando. Creamos un índices en alguna de las tablas cargadas y probamos los resultados:
 
+ Puede utilizar el siguiente script para crear su indice
+
+```bash
+ CREATE INDEX index_name
+ ON TABLE base_table_name (col_name, ...)
+ AS index_type
+ [WITH DEFERRED REBUILD]
+ [IDXPROPERTIES (property_name=property_value, ...)]
+ [IN TABLE index_table_name]
+ [ [ ROW FORMAT ...] STORED AS ...
+ | STORED BY ... ]
+ [LOCATION hdfs_path]
+ [TBLPROPERTIES (...)]
+ [COMMENT "index comment"];
+```
+
+Para realizar alguna modificación sobre su indice utilice :
+
+```bash
+ALTER INDEX index_name ON table_name [PARTITION partition_spec] REBUILD;
+```
+Ejemplo 
+
+hive> ALTER INDEX index_students ON students REBUILD; 
+
+Para borrar el indice 
+
+```bash
+DROP INDEX [IF EXISTS] index_name ON table_name;
+```
+
+Ejemplo 
+
+hive> DROP INDEX IF EXISTS index_students ON students; 
+
  **Paso 4**. Creamos un indice y ejecutamos un select para observar el tiempo de respuesta
 
 ```bash
@@ -342,11 +377,18 @@ put 'personal',4,'personal_data:name','Eliecer'
 put 'personal',4,'personal_data:city','Caracas'
 get 'personal','4'
 
+<p align="center">
+    <img src="./imagenes/consulta_hbase.png" alt="Clonando Repositorio"  />
+</p>
+
 **Paso 5.1**. En el **namenode** del cluster copiamos el archivo **personal.csv** al directroio **/data** de **HDFS**:
 
 ```bash
 hdfs dfs -put personal.csv /hbase/data/personal.csv
 ```
+<p align="center">
+    <img src="./imagenes/copiar_personal.png" alt="Clonando Repositorio"  />
+</p>
 
 ### MongoDB
 
@@ -482,6 +524,7 @@ Ciertos términos se utilizan en Open MCT con significados o convenciones consis
 ## Recursos
 
 https://github.com/sercasti/datalaketools
+https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
 
 ## Créditos
 
