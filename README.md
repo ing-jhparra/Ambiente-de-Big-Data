@@ -13,13 +13,13 @@
    <br />
 </p>
 
-## Contenido
+# Contenido
 
 * [Introducción](#Introducción)
 
 * [Implementación](#Implementación)
 
-* [1. HDFS](#1-HDFS)
+* [1. HDFS](#1.--HDFS)
 
 * [2. HIVE](#2-HIVE)
 
@@ -42,7 +42,7 @@
 * [Créditos](#Créditos)
 
 
-## Introducción
+# Introducción
 
 En la era de la información, las empresas necesitan herramientas para procesar y analizar grandes volúmenes de datos. El Big Data ofrece una solución para extraer información valiosa de estos conjuntos de datos, lo que permite tomar mejores decisiones y optimizar procesos.
 Beneficios de usar herramientas de Big Data:
@@ -141,7 +141,7 @@ cd Proyecto-Integrador-Big-Data
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
-# 1 HDFS
+# 1.- HDFS
 
 - **Paso 2**. Con la ejecución del paso anterior hemos implemetado un entorno HDFS, ahora ingresamos al **Namenode** para crear un directorio llamado **Datasets**  que va almacenar los archivos csv
 
