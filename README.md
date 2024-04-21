@@ -477,21 +477,57 @@ hive -f iris.hql
 
 ### Neo4J
 
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
+
 ### Zeppelin
+
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
 
 # Spark
 
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
+
 ## Spark y Scala
+
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
 
 ## Kafka
 
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
+
 ## Comparativa Dataset y Dataframe en Scala
+
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
 
 ##  ETL con Spark
 
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
+
 # Carga incremental con Spark
 
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
+
 # Herramientas de orquestación de flujos de datos
+
+<h4 align="center">
+:construction: Tema en fase de desarrollo y prueba :construction:
+</h4>
 
 ## Glosario :
 
