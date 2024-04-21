@@ -19,21 +19,21 @@
 
 * [Implementación](#Implementación)
 
-* [1. HDFS](#1HDFS)
+* [1. HDFS](#1-HDFS)
 
-* [2. HIVE](#HIVE)
+* [2. HIVE](#2-HIVE)
 
-* [3. Formatos de Almacenamiento](#Formatos-de-Almacenamiento)
+* [3. Formatos de Almacenamiento](#3-Formatos-de-Almacenamiento)
 
-* [4. SQL](#SQL)
+* [4. SQL](#4-SQL)
 
-* [5. No SQL](#No-SQL)
+* [5. No SQL](#5-No-SQL)
 
-* [6. Spark](#Spark)
+* [6. Spark](#6-Spark)
 
-* [7. Carga incremental con Spark](#Carga-incremental-con-Spark)
+* [7. Carga incremental con Spark](#7-Carga-incremental-con-Spark)
 
-* [8. Herramientas de orquestación de flujos de datos](#Herramientas-de-orquestación-de-flujos-de-datos)
+* [8. Herramientas de orquestación de flujos de datos](#8-Herramientas-de-orquestación-de-flujos-de-datos)
 
 * [Glosario](#Glosario)
 
@@ -141,7 +141,7 @@ cd Proyecto-Integrador-Big-Data
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
-# HDFS
+# 1 HDFS
 
 - **Paso 2**. Con la ejecución del paso anterior hemos implemetado un entorno HDFS, ahora ingresamos al **Namenode** para crear un directorio llamado **Datasets**  que va almacenar los archivos csv
 
@@ -217,7 +217,7 @@ hdfs dfs -put /home/Datasets/* /data
 
 Puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
 
-# HIVE
+# 2 HIVE
 
 **Paso 3**. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello copiamos el archivo **Paso02.hql** en **/home** del contenedor **hive-server** ejecutando el siguiente comando 
 
@@ -277,7 +277,7 @@ hive>select count(*) from canal_venta;
     <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
 </p>
 
- # Formatos de Almacenamiento
+ # 3 Formatos de Almacenamiento
 
 En el paso 3 fueron creadas las tablas a partir de los archivos csv, ahora crearemos unas tablas utilizando un formato **Parquet** con **Snappy** para cumplir debemos ejecutar el **Paso03.hql**, en este ejercicio utilizamso el concepto de particionamiento en la tabla venta.
 
@@ -302,7 +302,7 @@ select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
     <img src="./imagenes/consulta_gasto_parquet.png" alt="Clonando Repositorio"  />
 </p>
 
- # SQL
+ # 4 SQL
 
  La mejora en la velocidad de consulta que puede proporcionar un índice tiene el costo del procesamiento adicional para crear el índice y el espacio en disco para almacenar las referencias del índice. Se recomienda que los índices se basen en las ***columnas que utiliza en las condiciones de filtrado (where)***. El índice en la tabla puede degradar su rendimiento en caso de que no los esté utilizando. Creamos un índices en alguna de las tablas cargadas y probamos los resultados:
 
@@ -361,7 +361,7 @@ seguido, creamos los índices correspondientes en la tabla venta y cliente:
 CREATE INDEX index_venta_producto ON TABLE venta(IdProducto) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
 ```
 
-# No SQL
+# 5 No SQL
 
 Continuamos en el entorno ya creado
 
@@ -487,7 +487,7 @@ hive -f iris.hql
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# Spark
+# 6 Spark
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
@@ -517,13 +517,13 @@ hive -f iris.hql
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# Carga incremental con Spark
+# 7 Carga incremental con Spark
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# Herramientas de orquestación de flujos de datos
+# 8 Herramientas de orquestación de flujos de datos
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
@@ -585,8 +585,9 @@ Ciertos términos se utilizan en Open MCT con significados o convenciones consis
 
 ## Recursos
 
-https://github.com/sercasti/datalaketools
-https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
+* https://github.com/sercasti/datalaketools
+* https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
+* https://github.com/soyHenry/DS-M4-Herramientas_Big_Data
 
 ## Créditos
 
