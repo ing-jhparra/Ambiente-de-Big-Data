@@ -467,13 +467,15 @@ sudo docker cp mongo-java-driver-3.12.11.jar hive-server:/opt/hive/lib/mongo-jav
 sudo docker cp iris.hql hive-server:/opt/iris.hql
 sudo docker exec -it hive-server bash
 ```
-**Paso 6.9**. Otorgamos permisos y ejecutamos el archivo hql
+
+**Paso 6.9**. Habilitamos la interfaz de servidor que va a permite a clientes remotos ejecutar consultas en Hive, de igual manera otorgamos permisos y ejecutamos el archivo **iris.hql**
 
 ```bash
-hiveserver2
+hive --service hiveserver2
 chmod 777 iris.hql
 hive -f iris.hql
 ``` 	
+
 
 ### Neo4J
 
@@ -589,6 +591,7 @@ Ciertos términos se utilizan en Open MCT con significados o convenciones consis
 * https://github.com/soyHenry/DS-M4-Herramientas_Big_Data
 * https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 * https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
+* https://aitor-medrano.github.io/iabd/hadoop/hive1.html#caso-5-tabla-externa
 
 ## Créditos
 
