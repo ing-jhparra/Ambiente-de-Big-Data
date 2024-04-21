@@ -141,7 +141,7 @@ cd Proyecto-Integrador-Big-Data
 sudo docker-compose -f docker-compose-v1.yml up -d
 ```
 
-# 1.- HDFS
+# HDFS
 
 - **Paso 2**. Con la ejecución del paso anterior hemos implemetado un entorno HDFS, ahora ingresamos al **Namenode** para crear un directorio llamado **Datasets**  que va almacenar los archivos csv
 
@@ -217,7 +217,7 @@ hdfs dfs -put /home/Datasets/* /data
 
 Puede también buscar otras configuraciones que necesite conocer del sistema Hadoop
 
-# 2 HIVE
+# HIVE
 
 **Paso 3**. Creamos las tablas en Hive, a partir de los csv ingestados en HDFS. Para ello copiamos el archivo **Paso02.hql** en **/home** del contenedor **hive-server** ejecutando el siguiente comando 
 
@@ -277,7 +277,7 @@ hive>select count(*) from canal_venta;
     <img src="./imagenes/count_venta.png" alt="Clonando Repositorio"  />
 </p>
 
- # 3 Formatos de Almacenamiento
+ # Formatos de Almacenamiento
 
 En el paso 3 fueron creadas las tablas a partir de los archivos csv, ahora crearemos unas tablas utilizando un formato **Parquet** con **Snappy** para cumplir debemos ejecutar el **Paso03.hql**, en este ejercicio utilizamso el concepto de particionamiento en la tabla venta.
 
@@ -302,7 +302,7 @@ select IdTipoGasto, sum(Monto) from gasto group by IdTipoGasto;
     <img src="./imagenes/consulta_gasto_parquet.png" alt="Clonando Repositorio"  />
 </p>
 
- # 4 SQL
+ # SQL
 
  La mejora en la velocidad de consulta que puede proporcionar un índice tiene el costo del procesamiento adicional para crear el índice y el espacio en disco para almacenar las referencias del índice. Se recomienda que los índices se basen en las ***columnas que utiliza en las condiciones de filtrado (where)***. El índice en la tabla puede degradar su rendimiento en caso de que no los esté utilizando. Creamos un índices en alguna de las tablas cargadas y probamos los resultados:
 
@@ -361,7 +361,7 @@ seguido, creamos los índices correspondientes en la tabla venta y cliente:
 CREATE INDEX index_venta_producto ON TABLE venta(IdProducto) AS 'org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler' WITH DEFERRED REBUILD;
 ```
 
-# 5 No SQL
+# No SQL
 
 Continuamos en el entorno ya creado
 
@@ -487,7 +487,7 @@ hive -f iris.hql
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# 6 Spark
+# Spark
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
@@ -517,13 +517,13 @@ hive -f iris.hql
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# 7 Carga incremental con Spark
+# Carga incremental con Spark
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
 </h4>
 
-# 8 Herramientas de orquestación de flujos de datos
+# Herramientas de orquestación de flujos de datos
 
 <h4 align="center">
 :construction: Tema en fase de desarrollo y prueba :construction:
