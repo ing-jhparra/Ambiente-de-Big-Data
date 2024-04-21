@@ -19,21 +19,21 @@
 
 * [Implementación](#Implementación)
 
-* [HDFS](#1HDFS)
+* [1. HDFS](#1HDFS)
 
-* [HIVE](#HIVE)
+* [2. HIVE](#HIVE)
 
-* [Formatos de Almacenamiento](#Formatos-de-Almacenamiento)
+* [3. Formatos de Almacenamiento](#Formatos-de-Almacenamiento)
 
-* [SQL](#SQL)
+* [4. SQL](#SQL)
 
-* [No SQL](#No-SQL)
+* [5. No SQL](#No-SQL)
 
-* [Spark](#Spark)
+* [6. Spark](#Spark)
 
-* [Carga incremental con Spark](#Carga-incremental-con-Spark)
+* [7. Carga incremental con Spark](#Carga-incremental-con-Spark)
 
-* [Herramientas de orquestación de flujos de datos](#Herramientas-de-orquestación-de-flujos-de-datos)
+* [8. Herramientas de orquestación de flujos de datos](#Herramientas-de-orquestación-de-flujos-de-datos)
 
 * [Glosario](#Glosario)
 
