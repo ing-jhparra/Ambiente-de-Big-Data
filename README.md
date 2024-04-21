@@ -19,21 +19,21 @@
 
 * [Implementación](#Implementación)
 
-* [1. HDFS](#1.--HDFS)
+* [1. HDFS](#HDFS)
 
-* [2. HIVE](#2-HIVE)
+* [2. HIVE](#HIVE)
 
-* [3. Formatos de Almacenamiento](#3-Formatos-de-Almacenamiento)
+* [3. Formatos de Almacenamiento](#Formatos-de-Almacenamiento)
 
-* [4. SQL](#4-SQL)
+* [4. SQL](#SQL)
 
-* [5. No SQL](#5-No-SQL)
+* [5. No SQL](#No-SQL)
 
-* [6. Spark](#6-Spark)
+* [6. Spark](#Spark)
 
-* [7. Carga incremental con Spark](#7-Carga-incremental-con-Spark)
+* [7. Carga incremental con Spark](#Carga-incremental-con-Spark)
 
-* [8. Herramientas de orquestación de flujos de datos](#8-Herramientas-de-orquestación-de-flujos-de-datos)
+* [8. Herramientas de orquestación de flujos de datos](#Herramientas-de-orquestación-de-flujos-de-datos)
 
 * [Glosario](#Glosario)
 
@@ -586,8 +586,9 @@ Ciertos términos se utilizan en Open MCT con significados o convenciones consis
 ## Recursos
 
 * https://github.com/sercasti/datalaketools
-* https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
 * https://github.com/soyHenry/DS-M4-Herramientas_Big_Data
+* https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+* https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
 
 ## Créditos
 
