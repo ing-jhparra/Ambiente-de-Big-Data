@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo docker cp Datasets/canaldeventa/CanalDeVenta.csv namenode:/home/Datasets/canaldeventa/CanalDeVenta.csv
 sudo docker cp Datasets/calendario/Calendario.csv namenode:/home/Datasets/calendario/Calendario.csv
 sudo docker cp Datasets/cliente/Cliente.csv namenode:/home/Datasets/cliente/Cliente.csv
@@ -12,3 +13,7 @@ sudo docker cp Datasets/venta/Venta.csv namenode:/home/Datasets/venta/Venta.csv
 sudo docker cp Datasets/data_nvo/Cliente.csv namenode:/home/Datasets/data_nvo/Cliente.csv
 sudo docker cp Datasets/data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo/Empleado.csv
 sudo docker cp Datasets/data_nvo/Producto.csv namenode:/home/Datasets/data_nvo/Producto.csv
+sudo docker cp Datasets/iris.csv namenode:/home/Datasets/iris.csv
+sudo docker cp Datasets/iris.json namenode:/home/Datasets/iris.json
+sudo docker cp Datasets/personal.csv namenode:/home/Datasets/personal.csv
+sudo docker cp Datasets/raw-flight-data.csv namenode:/home/Datasets/raw-flight-data.csv
